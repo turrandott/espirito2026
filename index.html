@@ -1,0 +1,760 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#14100c" />
+    <meta
+      name="description"
+      content="ESPIRITO Festival 2026 — World Spiritual Music. Sentire la musica come ponte tra culture per la pace. 19 e 20 Giugno 2026, Arcidosso, Toscana."
+    />
+    <meta name="author" content="Dynamic Space of the Elements" />
+
+    <meta property="og:title" content="ESPIRITO Festival 2026 — World Spiritual Music" />
+    <meta
+      property="og:description"
+      content="Sentire la musica come ponte tra culture per la pace. 19 e 20 Giugno 2026, Arcidosso, Toscana."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="assets/images/hero.jpg" />
+
+    <title>ESPIRITO Festival 2026 — World Spiritual Music · Arcidosso, Toscana</title>
+
+    <link rel="icon" type="image/png" href="assets/logos/mandala.png" />
+    <link rel="apple-touch-icon" href="assets/logos/mandala.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Manrope:wght@300;400;500;600&family=Tenor+Sans&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              bg: "#14100c",
+              "bg-warm": "#1d1812",
+              panel: "#2a2018",
+              brown: "#6b4226",
+              terracotta: "#8b5a3c",
+              sand: "#c9a87a",
+              gold: "#d4a045",
+              orange: "#e89a3c",
+              olive: "#6b7344",
+              "olive-deep": "#4d5230",
+              cream: "#f5f1e8",
+              ink: "#f8f4ed",
+              muted: "rgba(248,244,237,0.62)",
+              faint: "rgba(248,244,237,0.18)",
+            },
+            fontFamily: {
+              display: ['"Cormorant Garamond"', "Times New Roman", "serif"],
+              caps: ['"Tenor Sans"', "Montserrat", "sans-serif"],
+              body: ["Manrope", "Inter", "system-ui", "sans-serif"],
+            },
+            letterSpacing: {
+              mid: "0.14em",
+              wider2: "0.24em",
+              big: "0.32em",
+            },
+            maxWidth: {
+              site: "1240px",
+            },
+            borderRadius: {
+              DEFAULT: "12px",
+            },
+          },
+        },
+      };
+    </script>
+
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="font-body bg-bg text-ink overflow-x-hidden font-light leading-relaxed antialiased">
+    <!-- ============================================================
+       NAV
+       ============================================================ -->
+    <header
+      id="nav"
+      class="nav fixed left-0 right-0 top-0 z-50 bg-gradient-to-b from-[rgba(20,16,12,0.85)] to-transparent py-4 transition-all duration-300"
+    >
+      <div
+        class="max-w-site mx-auto flex w-full items-center justify-between gap-4 px-5 sm:px-8 lg:px-10"
+      >
+        <a
+          href="#top"
+          class="font-caps tracking-mid text-ink flex items-center gap-2.5 text-base uppercase"
+          aria-label="ESPIRITO — home"
+        >
+          <img src="assets/logos/mandala.png" alt="" aria-hidden="true" class="h-[30px] w-[30px]" />
+          <span>Espirito</span>
+        </a>
+
+        <button
+          id="navToggle"
+          class="nav-toggle text-ink relative z-[60] h-11 w-11 cursor-pointer border-0 bg-transparent p-2 md:hidden"
+          aria-label="Apri menu"
+          aria-expanded="false"
+          aria-controls="navMenu"
+        >
+          <span
+            class="mx-auto my-1.5 block h-px w-6 bg-current transition-[transform,opacity] duration-300"
+          ></span>
+          <span
+            class="mx-auto my-1.5 block h-px w-6 bg-current transition-[transform,opacity] duration-300"
+          ></span>
+          <span
+            class="mx-auto my-1.5 block h-px w-6 bg-current transition-[transform,opacity] duration-300"
+          ></span>
+        </button>
+
+        <nav class="max-md:absolute">
+          <ul
+            id="navMenu"
+            class="nav-menu m-0 flex list-none flex-col items-center p-0 max-md:justify-center max-md:gap-7 max-md:p-20 max-md:pb-12 max-md:pt-20 md:flex-row md:justify-end md:gap-6 lg:gap-9"
+          >
+            <li>
+              <a
+                class="nav-link font-caps tracking-mid text-ink hover:text-orange text-[0.8rem] uppercase max-md:text-[1.1rem] max-md:tracking-[0.18em]"
+                href="#manifesto"
+              >
+                Festival
+              </a>
+            </li>
+            <li>
+              <a
+                class="nav-link font-caps tracking-mid text-ink hover:text-orange text-[0.8rem] uppercase max-md:text-[1.1rem] max-md:tracking-[0.18em]"
+                href="#impegno"
+              >
+                Visione
+              </a>
+            </li>
+            <li>
+              <a
+                class="nav-link font-caps tracking-mid text-ink hover:text-orange text-[0.8rem] uppercase max-md:text-[1.1rem] max-md:tracking-[0.18em]"
+                href="#polifonia"
+              >
+                Culture
+              </a>
+            </li>
+            <li>
+              <a
+                class="nav-link font-caps tracking-mid text-ink hover:text-orange text-[0.8rem] uppercase max-md:text-[1.1rem] max-md:tracking-[0.18em]"
+                href="#info"
+              >
+                Info
+              </a>
+            </li>
+            <li>
+              <a
+                class="nav-link font-caps tracking-mid text-ink hover:text-orange text-[0.8rem] uppercase max-md:text-[1.1rem] max-md:tracking-[0.18em]"
+                href="#eredita"
+              >
+                Contatti
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- ============================================================
+       HERO
+       ============================================================ -->
+    <section
+      id="top"
+      class="text-ink relative flex min-h-[100svh] items-center justify-center overflow-hidden px-6 pb-16 pt-24 text-center md:justify-start md:px-[clamp(2.5rem,7vw,7rem)] md:text-left"
+    >
+      <div class="hero-bg" aria-hidden="true"></div>
+
+      <!-- Decorative sound waves -->
+      <svg
+        class="pointer-events-none absolute inset-0 z-[1] opacity-35"
+        viewBox="0 0 1440 900"
+        preserveAspectRatio="none"
+        aria-hidden="true"
+      >
+        <g fill="none" stroke="#d4a045" stroke-width="0.6" opacity="0.55">
+          <path d="M0,520 Q360,440 720,520 T1440,520" />
+          <path d="M0,560 Q360,480 720,560 T1440,560" />
+          <path d="M0,600 Q360,520 720,600 T1440,600" />
+          <path d="M0,640 Q360,560 720,640 T1440,640" />
+          <path d="M0,680 Q360,600 720,680 T1440,680" />
+        </g>
+      </svg>
+
+      <!-- Dark overlay (mobile: radial vignette, desktop: left gradient) -->
+      <div
+        class="pointer-events-none absolute inset-0 z-[1] bg-[radial-gradient(ellipse_at_30%_55%,rgba(20,16,12,0.55)_0%,rgba(20,16,12,0)_60%),linear-gradient(to_bottom,rgba(20,16,12,0.35)_0%,rgba(20,16,12,0)_35%,rgba(20,16,12,0)_60%,rgba(20,16,12,0.85)_100%)] md:bg-[linear-gradient(to_right,rgba(20,16,12,0.7)_0%,rgba(20,16,12,0.35)_35%,rgba(20,16,12,0)_60%),linear-gradient(to_bottom,rgba(20,16,12,0.35)_0%,rgba(20,16,12,0)_35%,rgba(20,16,12,0)_60%,rgba(20,16,12,0.85)_100%)]"
+      ></div>
+
+      <div
+        class="relative z-[2] flex max-w-[900px] flex-col items-center gap-4 md:max-w-[min(48vw,560px)] md:items-start md:gap-7"
+      >
+        <p
+          class="font-caps text-cream m-0 pl-2 text-[clamp(0.78rem,0.7vw+0.6rem,0.95rem)] uppercase tracking-[0.5em]"
+        >
+          Festival
+        </p>
+        <img
+          class="w-[clamp(180px,42vw,240px)] drop-shadow-[0_10px_40px_rgba(0,0,0,0.45)] sm:w-[clamp(200px,45vw,480px)]"
+          src="assets/logos/espirito-white.png"
+          alt="Espirito — World Spiritual Music"
+        />
+        <p
+          class="font-display text-cream m-0 text-[clamp(1.4rem,2.5vw+0.5rem,2.4rem)] font-light italic tracking-[0.01em]"
+        >
+          <strong class="text-gold font-medium not-italic">19 &amp; 20</strong>
+          Giugno
+          <strong class="text-gold font-medium not-italic">2026</strong>
+        </p>
+        <p
+          class="font-caps tracking-big text-cream m-0 text-[clamp(0.85rem,0.8vw+0.6rem,1.05rem)] uppercase"
+        >
+          Arcidosso · Toscana · Italia
+        </p>
+        <p
+          class="font-caps text-orange m-0 mt-2 max-w-[50ch] text-[clamp(0.7rem,0.6vw+0.55rem,0.88rem)] uppercase leading-loose tracking-[0.28em] sm:mt-6"
+        >
+          Sentire la musica come ponte tra culture per la pace
+        </p>
+      </div>
+
+      <a
+        href="#manifesto"
+        aria-label="Scorri verso il basso"
+        class="scroll-cue font-caps tracking-wider2 text-muted absolute bottom-10 left-1/2 z-[3] flex -translate-x-1/2 flex-col items-center gap-2 text-[0.7rem] uppercase"
+      >
+        Scopri
+        <span class="from-orange block h-9 w-px bg-gradient-to-b to-transparent"></span>
+      </a>
+    </section>
+
+    <!-- ============================================================
+       MANIFESTO
+       ============================================================ -->
+    <section id="manifesto" class="bg-bg-warm py-[clamp(4rem,12vw,9rem)]">
+      <div class="max-w-site mx-auto w-full max-w-[860px] px-5 text-center sm:px-8 lg:px-10">
+        <p class="eyebrow reveal">World Spiritual Music</p>
+        <div class="reveal reveal--delay-1 mb-6 flex justify-center">
+          <img
+            class="h-[42px] w-[42px] opacity-80"
+            src="assets/logos/mandala.png"
+            alt=""
+            aria-hidden="true"
+          />
+        </div>
+        <h1 class="h-display reveal reveal--delay-1">
+          Un incontro artistico dedicato alla
+          <em>musica spirituale</em>
+          come linguaggio universale di coscienza e connessione.
+        </h1>
+        <p class="body-text reveal reveal--delay-2 mx-auto mt-6">
+          ESPÍRITO riunisce tradizioni ancestrali ed espressioni artistiche contemporanee di diverse
+          culture autentiche del mondo:
+        </p>
+        <ul
+          class="reveal reveal--delay-2 font-display text-cream my-2 flex list-none flex-wrap justify-center gap-x-6 p-0 text-[clamp(0.95rem,0.5vw+0.85rem,1.15rem)] italic"
+        >
+          <li>Dzogchen del Tibet</li>
+          <li>Tribale dell'Africa Centrale</li>
+          <li>Amazonia del Sud America</li>
+          <li>India</li>
+          <li>Nativi del Nord America</li>
+          <li>Coro cristiano d'Europa</li>
+          <li>Maori dell'Oceania</li>
+        </ul>
+        <p class="body-text reveal reveal--delay-2 mx-auto">
+          che si intrecciano in uno stesso spazio creando un dialogo sonoro che unisce territori,
+          tempi e saperi spirituali.
+        </p>
+        <p class="body-text reveal reveal--delay-3 mx-auto mt-12">
+          Un'esperienza intima per vivere e godere della ricchezza della diversità culturale del
+          mondo, dove l'arte esprime il senso spirituale della nostra natura, utilizzando la musica
+          come veicolo per promuovere legami di connessione, pace e trasformazione collettiva.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+       IMPEGNO — Visione & Missione
+       ============================================================ -->
+    <section id="impegno" class="bg-olive-deep/40 py-[clamp(4rem,12vw,9rem)]">
+      <div class="max-w-site mx-auto w-full px-5 sm:px-8 lg:px-10">
+        <div class="reveal mb-12 text-center">
+          <p class="eyebrow">Il nostro impegno</p>
+          <h2 class="h-display">Espandere la <em>conoscenza</em>, ispirare l'unità.</h2>
+        </div>
+
+        <div class="mx-auto grid max-w-[1000px] gap-[clamp(1.5rem,3vw,2.5rem)] md:grid-cols-2">
+          <article
+            class="reveal reveal--delay-1 bg-bg/60 border-faint hover:border-orange/40 rounded border p-[clamp(1.5rem,3vw,2.5rem)] transition-[border-color,transform] duration-500 hover:-translate-y-0.5"
+          >
+            <div class="mb-3 flex items-baseline gap-2">
+              <span class="font-display text-gold text-[1rem] italic leading-none">I.</span>
+              <h3
+                class="font-caps tracking-mid text-ink/70 m-0 text-[clamp(0.78rem,0.5vw+0.6rem,0.92rem)] font-normal uppercase"
+              >
+                Visione
+              </h3>
+            </div>
+            <p
+              class="font-display text-gold mb-5 text-[clamp(1.6rem,2.8vw+0.6rem,2.4rem)] italic leading-tight"
+            >
+              Espandere la Conoscenza
+            </p>
+            <p class="body-text">
+              Creare un evento che vada oltre il semplice intrattenimento e si trasformi in
+              un'esperienza collettiva di connessione e unità, scoprendo e godendo della ricchezza
+              che le diverse culture del mondo esprimono attraverso la musica e la sua espressione
+              autentica.
+            </p>
+            <p class="body-text mt-4">
+              Aspiriamo a essere un punto di incontro internazionale per artisti, ricercatori e
+              comunità che riconoscono l'arte come uno strumento di trasformazione spirituale e
+              sociale.
+            </p>
+          </article>
+
+          <article
+            class="reveal reveal--delay-2 bg-bg/60 border-faint hover:border-orange/40 rounded border p-[clamp(1.5rem,3vw,2.5rem)] transition-[border-color,transform] duration-500 hover:-translate-y-0.5"
+          >
+            <div class="mb-3 flex items-baseline gap-2">
+              <span class="font-display text-gold text-[1rem] italic leading-none">II.</span>
+              <h3
+                class="font-caps tracking-mid text-ink/70 m-0 text-[clamp(0.78rem,0.5vw+0.6rem,0.92rem)] font-normal uppercase"
+              >
+                Missione
+              </h3>
+            </div>
+            <p
+              class="font-display text-gold mb-5 text-[clamp(1.6rem,2.8vw+0.6rem,2.4rem)] italic leading-tight"
+            >
+              Un Canale di Trasformazione e Unità
+            </p>
+            <p class="body-text">
+              La nostra missione è offrire un incontro in cui la pluralità delle espressioni umane
+              si trasformi in un'esperienza viva per condividere un'esperienza trasformativa.
+            </p>
+            <p class="body-text mt-4">
+              Crediamo che la pace derivi dalla capacità di incontrarsi e scoprire la profonda e
+              autentica bellezza delle diverse culture del pianeta. Il festival agisce come un
+              promemoria intimo del fatto che la pace è un esercizio attivo di riconoscimento.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+       POLIFONIA DI CULTURE
+       ============================================================ -->
+    <section id="polifonia" class="bg-bg py-[clamp(4rem,12vw,9rem)]">
+      <div class="max-w-site mx-auto w-full px-5 sm:px-8 lg:px-10">
+        <div class="mb-16 grid items-center gap-12 md:grid-cols-2">
+          <div class="reveal border-faint overflow-hidden rounded border">
+            <img
+              src="assets/images/polifonia.jpg"
+              alt="Musicisti da diverse culture suonano insieme ad Arcidosso al tramonto"
+              loading="lazy"
+              class="block h-auto w-full"
+            />
+          </div>
+          <div class="reveal reveal--delay-1">
+            <p class="eyebrow">Una polifonia di culture</p>
+            <h2 class="h-display">
+              La
+              <em>mappa sonora</em>
+              di Espirito.
+            </h2>
+            <p class="body-text mt-4">
+              Presentiamo una curata selezione di artisti le cui opere incarnano la profonda onestà
+              intellettuale e l'autentica bellezza della loro arte tradizionale e contemporanea,
+              creando un perfetto dialogo elettroacustico in cui la conoscenza spirituale si
+              manifesta in antiche e nuove forme sonore.
+            </p>
+          </div>
+        </div>
+
+        <div class="reveal my-12 flex items-center justify-center gap-4">
+          <span class="bg-faint block h-px w-24"></span>
+          <img
+            class="h-9 w-9 opacity-80"
+            src="assets/logos/mandala.png"
+            alt=""
+            aria-hidden="true"
+          />
+          <span class="bg-faint block h-px w-24"></span>
+        </div>
+
+        <h3 class="h-caps reveal text-center" style="margin-bottom: clamp(1.5rem, 4vw, 2.5rem)">
+          Le tradizioni che ci uniscono
+        </h3>
+
+        <div
+          class="mx-auto grid max-w-[1100px] grid-cols-[repeat(auto-fit,minmax(220px,1fr))] gap-4"
+        >
+          <div
+            class="reveal bg-panel/40 border-faint hover:border-orange/40 hover:bg-panel/70 flex flex-col gap-1 rounded border p-5 transition-all duration-500"
+          >
+            <span class="font-caps text-orange tracking-mid text-[0.92rem] uppercase">
+              Dzogchen
+            </span>
+            <span class="font-display text-cream text-[0.95rem] italic">Tibet</span>
+          </div>
+          <div
+            class="reveal reveal--delay-1 bg-panel/40 border-faint hover:border-orange/40 hover:bg-panel/70 flex flex-col gap-1 rounded border p-5 transition-all duration-500"
+          >
+            <span class="font-caps text-orange tracking-mid text-[0.92rem] uppercase">Tribale</span>
+            <span class="font-display text-cream text-[0.95rem] italic">Africa Centrale</span>
+          </div>
+          <div
+            class="reveal reveal--delay-2 bg-panel/40 border-faint hover:border-orange/40 hover:bg-panel/70 flex flex-col gap-1 rounded border p-5 transition-all duration-500"
+          >
+            <span class="font-caps text-orange tracking-mid text-[0.92rem] uppercase">Indù</span>
+            <span class="font-display text-cream text-[0.95rem] italic">India</span>
+          </div>
+          <div
+            class="reveal reveal--delay-3 bg-panel/40 border-faint hover:border-orange/40 hover:bg-panel/70 flex flex-col gap-1 rounded border p-5 transition-all duration-500"
+          >
+            <span class="font-caps text-orange tracking-mid text-[0.92rem] uppercase">
+              Amazonia
+            </span>
+            <span class="font-display text-cream text-[0.95rem] italic">Sud America</span>
+          </div>
+          <div
+            class="reveal bg-panel/40 border-faint hover:border-orange/40 hover:bg-panel/70 flex flex-col gap-1 rounded border p-5 transition-all duration-500"
+          >
+            <span class="font-caps text-orange tracking-mid text-[0.92rem] uppercase">Maori</span>
+            <span class="font-display text-cream text-[0.95rem] italic">Oceania</span>
+          </div>
+          <div
+            class="reveal reveal--delay-1 bg-panel/40 border-faint hover:border-orange/40 hover:bg-panel/70 flex flex-col gap-1 rounded border p-5 transition-all duration-500"
+          >
+            <span class="font-caps text-orange tracking-mid text-[0.92rem] uppercase">Nativi</span>
+            <span class="font-display text-cream text-[0.95rem] italic">Nord America</span>
+          </div>
+          <div
+            class="reveal reveal--delay-2 bg-panel/40 border-faint hover:border-orange/40 hover:bg-panel/70 flex flex-col gap-1 rounded border p-5 transition-all duration-500"
+          >
+            <span class="font-caps text-orange tracking-mid text-[0.92rem] uppercase">
+              Coro Cristiano
+            </span>
+            <span class="font-display text-cream text-[0.95rem] italic">Europa</span>
+          </div>
+          <div
+            class="reveal reveal--delay-3 bg-panel/40 border-faint hover:border-orange/40 hover:bg-panel/70 flex flex-col gap-1 rounded border p-5 transition-all duration-500"
+          >
+            <span class="font-caps text-orange tracking-mid text-[0.92rem] uppercase">
+              Dialogo Elettroacustico
+            </span>
+            <span class="font-display text-cream text-[0.95rem] italic">Contemporaneo</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+       PUBBLICO
+       ============================================================ -->
+    <section class="bg-olive-deep/40 py-[clamp(4rem,12vw,9rem)]">
+      <div class="max-w-site mx-auto w-full px-5 sm:px-8 lg:px-10">
+        <div class="grid items-center gap-12 md:grid-cols-2 md:[direction:rtl]">
+          <div class="reveal border-faint overflow-hidden rounded border md:[direction:ltr]">
+            <img
+              src="assets/images/pubblico.jpg"
+              alt="Il pubblico di Espirito Festival"
+              loading="lazy"
+              class="block h-auto w-full"
+            />
+          </div>
+          <div class="reveal reveal--delay-1 md:[direction:ltr]">
+            <p class="eyebrow">Pubblico</p>
+            <h2 class="h-display">Viaggiatori in cerca di <em>autenticità</em>.</h2>
+            <p class="body-text mt-4">
+              Il nostro pubblico è composto da persone di diverse età e provenienze da tutto il
+              mondo: professionisti, creativi, accademici e viaggiatori
+              <em>slow</em>
+              alla ricerca di esperienze culturali autentiche nei borghi storici.
+            </p>
+            <p class="body-text mt-4">
+              Sono uniti dal comune interesse di condividere attività legate al benessere, all'arte,
+              alla spiritualità e alle nuove forme culturali sonore.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+       IMPATTO CULTURALE E SOCIALE
+       ============================================================ -->
+    <section class="relative overflow-hidden py-[clamp(4rem,12vw,9rem)]">
+      <div class="impatto-bg" aria-hidden="true"></div>
+      <div
+        class="max-w-site relative mx-auto w-full max-w-[820px] px-5 text-center sm:px-8 lg:px-10"
+      >
+        <p class="eyebrow reveal">Impatto culturale e sociale</p>
+        <h2 class="h-display reveal reveal--delay-1">
+          Dalle
+          <em>grandi capitali</em>
+          ai borghi storici.
+        </h2>
+
+        <div
+          class="reveal reveal--delay-2 bg-brown/30 border-orange/30 mt-4 flex flex-col items-center justify-center gap-4 rounded border p-[clamp(1.5rem,3vw,2.5rem)] backdrop-blur-sm"
+        >
+          <p class="body-text text-cream">
+            Portiamo l'eccellenza culturale dalle grandi capitali ai borghi storici, rafforzando
+            l'importanza del turismo culturale e la promozione globale della regione come uno spazio
+            di dialogo e di creazione collettiva.
+          </p>
+          <p class="body-text text-cream mt-4">
+            ESPÍRITO mette in luce il profondo significato dell'arte creata da diverse culture
+            dall'antichità ai nostri giorni — un momento di espressione genuina e autentica sia per
+            gli artisti che per gli spettatori, uno spazio per approfondire la connessione
+            spirituale attraverso il potere e le virtù della musica.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+       INFO PRATICHE
+       ============================================================ -->
+    <section id="info" class="bg-bg-warm py-[clamp(4rem,12vw,9rem)]">
+      <div class="max-w-site mx-auto w-full px-5 sm:px-8 lg:px-10">
+        <div class="reveal mb-12 text-center">
+          <p class="eyebrow">Prepara la tua esperienza</p>
+          <h2 class="h-display">Informazioni <em>pratiche</em>.</h2>
+        </div>
+
+        <div class="mx-auto grid max-w-[1100px] grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <!-- Date -->
+          <div
+            class="reveal bg-bg/60 border-faint hover:border-orange/40 flex flex-col items-center gap-3 rounded border p-6 text-center transition-all duration-500"
+          >
+            <svg
+              class="text-orange h-9 w-9"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.4"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <rect x="3" y="5" width="18" height="16" rx="2" />
+              <path d="M16 3v4M8 3v4M3 10h18" />
+            </svg>
+            <div class="font-caps text-orange tracking-mid text-[0.78rem] uppercase">Date</div>
+            <div class="font-display text-cream text-[1.3rem] leading-tight">
+              <em class="text-gold font-medium not-italic">19</em>
+              &
+              <em class="text-gold font-medium not-italic">20</em>
+              <br />
+              Giugno 2026
+            </div>
+          </div>
+          <!-- Inizio -->
+          <div
+            class="reveal reveal--delay-1 bg-bg/60 border-faint hover:border-orange/40 flex flex-col items-center gap-3 rounded border p-6 text-center transition-all duration-500"
+          >
+            <svg
+              class="text-orange h-9 w-9"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.4"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="12" cy="12" r="9" />
+              <polyline points="12,6 12,12 16,14" />
+            </svg>
+            <div class="font-caps text-orange tracking-mid text-[0.78rem] uppercase">Inizio</div>
+            <div class="font-display text-cream text-[1.3rem] leading-tight">
+              Ore
+              <em class="text-gold font-medium not-italic">19:00</em>
+            </div>
+          </div>
+          <!-- Luogo -->
+          <div
+            class="reveal reveal--delay-2 bg-bg/60 border-faint hover:border-orange/40 flex flex-col items-center gap-3 rounded border p-6 text-center transition-all duration-500"
+          >
+            <svg
+              class="text-orange h-9 w-9"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.4"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M12 22s8-7.58 8-13a8 8 0 1 0-16 0c0 5.42 8 13 8 13z" />
+              <circle cx="12" cy="9" r="2.5" />
+            </svg>
+            <div class="font-caps text-orange tracking-mid text-[0.78rem] uppercase">Luogo</div>
+            <div class="font-display text-cream text-[1.3rem] leading-tight">
+              Piazza della
+              <em class="text-gold italic">Riconciliazione</em>
+              <br />
+              Arcidosso (GR)
+            </div>
+          </div>
+          <!-- Ingresso -->
+          <div
+            class="reveal reveal--delay-3 bg-bg/60 border-faint hover:border-orange/40 flex flex-col items-center gap-3 rounded border p-6 text-center transition-all duration-500"
+          >
+            <svg
+              class="text-orange h-9 w-9"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.4"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M12 2v20M2 12h20" />
+              <circle cx="12" cy="12" r="9" />
+            </svg>
+            <div class="font-caps text-orange tracking-mid text-[0.78rem] uppercase">Ingresso</div>
+            <div class="font-display text-cream text-[1.3rem] leading-tight">
+              Libero
+              <br />
+              <em class="text-gold italic">donazione libera</em>
+            </div>
+          </div>
+        </div>
+
+        <p class="body-text reveal mx-auto mt-10 text-center">
+          Un ambiente unico circondato dalla natura e dal misticismo spirituale dei borghi toscani.
+          Espirito è pensato per viaggiatori <em>slow</em>, professionisti, menti creative,
+          accademici e persone di tutte le età alla ricerca di esperienze culturali autentiche, di
+          benessere e connessione con l'ambiente naturale.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+       EREDITÀ — Organizers
+       ============================================================ -->
+    <section
+      id="eredita"
+      class="relative isolate overflow-hidden py-[clamp(3rem,7vw,5rem)] pb-[clamp(4rem,8vw,6rem)]"
+    >
+      <div class="eredita-bg" aria-hidden="true"></div>
+      <div
+        class="max-w-site mx-auto flex w-full max-w-[760px] flex-col items-center gap-[clamp(1rem,2.4vw,1.5rem)] px-5 text-center sm:px-8 lg:px-10"
+      >
+        <p class="eyebrow reveal !text-orange !mb-0">Costruiamo insieme questa eredità</p>
+        <img
+          class="reveal reveal--delay-1 my-1 block h-auto w-[clamp(240px,42vw,380px)]"
+          src="assets/logos/espirito-white.png"
+          alt="Espirito — World Spiritual Music"
+        />
+
+        <p class="eyebrow reveal reveal--delay-2 !text-orange !mb-0">Organizza</p>
+        <h2
+          class="reveal reveal--delay-2 font-caps text-ink m-0 text-[clamp(1.4rem,2.6vw+0.5rem,2.2rem)] uppercase leading-[1.18] tracking-[0.16em]"
+        >
+          Dynamic Space
+          <br />
+          of the Elements
+        </h2>
+
+        <div
+          class="reveal reveal--delay-3 mt-3 grid w-full grid-cols-1 items-center gap-5 sm:grid-cols-[auto_minmax(0,1fr)_auto] sm:gap-10"
+        >
+          <img
+            class="mx-auto h-auto w-[72px] rounded-lg bg-white/95 object-contain p-1.5 sm:w-[clamp(60px,10vw,96px)]"
+            src="assets/logos/dynamic.png"
+            alt="Dynamic Space of the Elements"
+          />
+          <p
+            class="font-body text-cream m-0 text-[clamp(0.92rem,0.3vw+0.85rem,1.05rem)] leading-relaxed"
+          >
+            Associazione culturale e artistica con sede in Toscana, in collaborazione con il Comune
+            di Arcidosso.
+          </p>
+          <img
+            class="mx-auto h-auto w-[72px] rounded-lg bg-white/95 object-contain p-1.5 sm:w-[clamp(60px,10vw,96px)]"
+            src="assets/logos/comune-arcidosso.jpeg"
+            alt="Comune di Arcidosso"
+          />
+        </div>
+
+        <div class="reveal reveal--delay-3 mt-4 flex flex-col items-center gap-1.5">
+          <a
+            class="font-body text-orange hover:text-cream text-[0.92rem] transition-colors"
+            href="https://www.dynamicelements.org"
+            target="_blank"
+            rel="noopener"
+          >
+            www.dynamicelements.org
+          </a>
+          <a
+            class="font-body text-orange hover:text-cream text-[0.92rem] transition-colors"
+            href="mailto:espiritofestival@gmail.com"
+          >
+            espiritofestival@gmail.com
+          </a>
+          <a
+            class="font-body text-orange hover:text-cream text-[0.92rem] transition-colors"
+            href="https://www.instagram.com/espiritofestival"
+            target="_blank"
+            rel="noopener"
+          >
+            @espiritofestival
+          </a>
+        </div>
+        <div class="reveal mt-[clamp(2rem,6vw,4rem)] text-center">
+          <div class="font-caps tracking-wider2 text-sand mb-6 text-[0.75rem] uppercase">
+            Con il sostegno di
+          </div>
+          <ul
+            class="m-0 mx-auto flex max-w-[900px] list-none flex-wrap justify-center gap-x-[clamp(1rem,3vw,2.5rem)] gap-y-3 p-0"
+          >
+            <li
+              class="font-display text-cream before:text-orange text-[clamp(0.95rem,0.5vw+0.85rem,1.15rem)] italic before:mr-2 before:inline-block before:align-middle before:text-[0.6em] before:content-['◆']"
+            >
+              Istituto Shang Shung
+            </li>
+            <li
+              class="font-display text-cream before:text-orange text-[clamp(0.95rem,0.5vw+0.85rem,1.15rem)] italic before:mr-2 before:inline-block before:align-middle before:text-[0.6em] before:content-['◆']"
+            >
+              Comunità Dzogchen di Merigar
+            </li>
+            <li
+              class="font-display text-cream before:text-orange text-[clamp(0.95rem,0.5vw+0.85rem,1.15rem)] italic before:mr-2 before:inline-block before:align-middle before:text-[0.6em] before:content-['◆']"
+            >
+              Fondazione Atiyoga
+            </li>
+            <li
+              class="font-display text-cream before:text-orange text-[clamp(0.95rem,0.5vw+0.85rem,1.15rem)] italic before:mr-2 before:inline-block before:align-middle before:text-[0.6em] before:content-['◆']"
+            >
+              CID
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+    <footer class="border-faint border-t bg-[#0c0907] py-6 text-center">
+      <div class="max-w-site mx-auto w-full px-5 sm:px-8 lg:px-10">
+        <p class="text-muted m-0 text-[0.78rem] tracking-[0.05em]">
+          © 2026 Espirito Festival · World Spiritual Music · Arcidosso, Toscana · Italia
+        </p>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
