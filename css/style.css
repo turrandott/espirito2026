@@ -81,7 +81,7 @@
   transform: scale(1.05);
   animation: heroBreathe 18s ease-in-out infinite alternate;
 }
-@media (min-width: 768px) {
+@media (min-width: 900px) {
   .hero-bg {
     background-position: center;
   }
@@ -107,7 +107,7 @@
       rgba(20, 16, 12, 0.88) 70%,
       rgba(20, 16, 12, 0.95)
     ),
-    url("../assets/images/11.png") center/cover no-repeat;
+    url("../assets/images/electronic.jpg") center/cover no-repeat;
 }
 
 /* ---------- Impatto background image (with fixed parallax) ---------- */
