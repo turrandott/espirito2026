@@ -12,7 +12,7 @@
   font-size: clamp(0.72rem, 0.85vw + 0.5rem, 0.92rem);
   letter-spacing: 0.24em;
   text-transform: uppercase;
-  color: #e89a3c;
+  color: #ffb45c;
   font-weight: 400;
   margin: 0 0 clamp(1rem, 2.5vw, 1.5rem);
   display: inline-block;
@@ -28,7 +28,7 @@
 }
 .h-display em {
   font-style: italic;
-  color: #d4a045;
+  color: #f2cc6a;
 }
 .h-caps {
   font-family: "Tenor Sans", Montserrat, sans-serif;
@@ -76,15 +76,12 @@
 .hero-bg {
   position: absolute;
   inset: 0;
-  background: url("../assets/images/hero.jpg") 58% center / cover no-repeat;
+  background-image: url("../assets/images/hero.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
   filter: brightness(0.78) saturate(1.05);
   transform: scale(1.05);
   animation: heroBreathe 18s ease-in-out infinite alternate;
-}
-@media (min-width: 900px) {
-  .hero-bg {
-    background-position: center;
-  }
 }
 @keyframes heroBreathe {
   from {
@@ -198,7 +195,7 @@
   left: 50%;
   width: 0;
   height: 1px;
-  background: #e89a3c;
+  background: #ffb45c;
   transition:
     width 0.3s cubic-bezier(0.22, 1, 0.36, 1),
     left 0.3s cubic-bezier(0.22, 1, 0.36, 1);
@@ -225,6 +222,6 @@
 
 /* ---------- Selection ---------- */
 ::selection {
-  background: #e89a3c;
+  background: #ffb45c;
   color: #14100c;
 }

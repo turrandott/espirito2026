@@ -53,8 +53,8 @@
               brown: "#6b4226",
               terracotta: "#8b5a3c",
               sand: "#c9a87a",
-              gold: "#d4a045",
-              orange: "#e89a3c",
+              gold: "#f2cc6a",
+              orange: "#ffb45c",
               olive: "#6b7344",
               "olive-deep": "#4d5230",
               cream: "#f5f1e8",
@@ -178,9 +178,12 @@
        ============================================================ -->
     <section
       id="top"
-      class="text-ink relative flex min-h-[100svh] items-center justify-center overflow-hidden px-6 pb-16 pt-24 text-center md:justify-start md:px-[clamp(2.5rem,7vw,7rem)] md:text-left"
+      class="text-ink relative flex min-h-[100svh] items-center justify-center overflow-hidden px-6 pb-16 pt-12 text-center md:justify-start md:px-[clamp(2.5rem,7vw,7rem)]"
     >
-      <div class="hero-bg" aria-hidden="true"></div>
+      <div
+        class="hero-bg [background-position:58%_center] md:[background-position:30%_center] lg:[background-position:-5%_center] xl:[background-position:-35%_center] 2xl:[background-position:-30%_center]"
+        aria-hidden="true"
+      ></div>
 
       <!-- Decorative sound waves -->
       <svg
@@ -189,7 +192,7 @@
         preserveAspectRatio="none"
         aria-hidden="true"
       >
-        <g fill="none" stroke="#d4a045" stroke-width="0.6" opacity="0.55">
+        <g fill="none" stroke="#f2cc6a" stroke-width="0.6" opacity="0.72">
           <path d="M0,520 Q360,440 720,520 T1440,520" />
           <path d="M0,560 Q360,480 720,560 T1440,560" />
           <path d="M0,600 Q360,520 720,600 T1440,600" />
@@ -204,35 +207,37 @@
       ></div>
 
       <div
-        class="relative z-[2] flex max-w-[900px] flex-col items-center gap-4 md:max-w-[min(48vw,560px)] md:items-start md:gap-7"
+        class="relative z-[2] flex max-w-[900px] flex-col items-center gap-4 md:max-w-[min(70vw,800px)] md:gap-7"
       >
         <p
-          class="font-caps text-cream m-0 pl-2 text-[clamp(0.78rem,0.7vw+0.6rem,0.95rem)] uppercase tracking-[0.5em]"
+          class="font-caps text-cream m-0 w-full pl-[22%] text-center text-[clamp(1.56rem,1.4vw+1.2rem,1.9rem)] uppercase tracking-[0.5em]"
         >
           Festival
         </p>
         <img
-          class="w-[clamp(180px,42vw,240px)] drop-shadow-[0_10px_40px_rgba(0,0,0,0.45)] sm:w-[clamp(200px,45vw,480px)]"
+          class="mb-36 mr-5 w-[clamp(360px,480px,480px)] drop-shadow-[0_10px_40px_rgba(0,0,0,0.45)] sm:w-[clamp(400px,960px,960px)]"
           src="assets/logos/espirito-white.png"
           alt="Espirito — World Spiritual Music"
         />
-        <p
-          class="font-display text-cream m-0 text-[clamp(1.4rem,2.5vw+0.5rem,2.4rem)] font-light italic tracking-[0.01em]"
-        >
-          <strong class="text-gold font-medium not-italic">19 &amp; 20</strong>
-          Giugno
-          <strong class="text-gold font-medium not-italic">2026</strong>
-        </p>
-        <p
-          class="font-caps tracking-big text-cream m-0 text-[clamp(0.85rem,0.8vw+0.6rem,1.05rem)] uppercase"
-        >
-          Arcidosso · Toscana · Italia
-        </p>
-        <p
-          class="font-caps text-orange m-0 mt-2 max-w-[50ch] text-[clamp(0.7rem,0.6vw+0.55rem,0.88rem)] uppercase leading-loose tracking-[0.28em] sm:mt-6"
-        >
-          Sentire la musica come ponte tra culture per la pace
-        </p>
+        <div class="pl-0 md:pl-[18%]">
+          <p
+            class="font-display text-cream m-0 text-[clamp(1.4rem,2.5vw+0.5rem,2.4rem)] font-light italic tracking-[0.01em]"
+          >
+            <strong class="text-gold font-medium not-italic">19 &amp; 20</strong>
+            Giugno
+            <strong class="text-gold font-medium not-italic">2026</strong>
+          </p>
+          <p
+            class="font-caps tracking-big text-cream m-0 text-[clamp(0.85rem,0.8vw+0.6rem,1.05rem)] uppercase"
+          >
+            Arcidosso · Toscana · Italia
+          </p>
+          <p
+            class="font-caps text-orange m-0 mt-2 max-w-[50ch] text-[clamp(0.7rem,0.6vw+0.55rem,0.88rem)] uppercase leading-loose tracking-[0.28em] sm:mt-6"
+          >
+            Sentire la musica come ponte tra culture per la pace
+          </p>
+        </div>
       </div>
 
       <a
