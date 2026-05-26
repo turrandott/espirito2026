@@ -30,6 +30,11 @@
   font-style: italic;
   color: #f2cc6a;
 }
+/* Keep terminal punctuation with heading color; inside <em> so autotranslate won't gap before "." */
+.h-display-punct {
+  font-style: normal;
+  color: #f8f4ed;
+}
 .h-caps {
   font-family: "Tenor Sans", Montserrat, sans-serif;
   font-size: clamp(1.1rem, 1.6vw + 0.4rem, 1.6rem);

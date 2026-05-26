@@ -359,8 +359,13 @@
     <!-- ============================================================
        IMPEGNO — Visione & Missione
        ============================================================ -->
-    <section id="impegno" class="bg-olive-deep/40 py-[clamp(4rem,12vw,9rem)]">
-      <div class="max-w-site mx-auto w-full px-5 sm:px-8 lg:px-10">
+    <section id="impegno" class="relative overflow-hidden py-[clamp(4rem,12vw,9rem)]">
+      <div
+        class="pointer-events-none absolute inset-0 bg-[url('assets/images/unione.webp')] bg-cover bg-center bg-no-repeat"
+        aria-hidden="true"
+      ></div>
+      <div class="bg-bg/50 pointer-events-none absolute inset-0" aria-hidden="true"></div>
+      <div class="max-w-site relative z-10 mx-auto w-full px-5 sm:px-8 lg:px-10">
         <div class="reveal mb-12 text-center">
           <p class="eyebrow">Il nostro impegno</p>
           <h2 class="h-display">Espandere la <em>conoscenza</em>, ispirare l'unità.</h2>
@@ -550,7 +555,9 @@
           </div>
           <div class="reveal reveal--delay-1 md:[direction:ltr]">
             <p class="eyebrow">Pubblico</p>
-            <h2 class="h-display">Viaggiatori in cerca di <em>autenticità</em>.</h2>
+            <h2 class="h-display">
+              Viaggiatori in cerca di <em>autenticità<span class="h-display-punct">.</span></em>
+            </h2>
             <p class="body-text mt-4">
               Il nostro pubblico è composto da persone di diverse età e provenienze da tutto il
               mondo: professionisti, creativi, accademici e viaggiatori
@@ -606,7 +613,9 @@
       <div class="max-w-site mx-auto w-full px-5 sm:px-8 lg:px-10">
         <div class="reveal mb-12 text-center">
           <p class="eyebrow">Prepara la tua esperienza</p>
-          <h2 class="h-display">Informazioni <em>pratiche</em>.</h2>
+          <h2 class="h-display">
+            Informazioni <em>pratiche<span class="h-display-punct">.</span></em>
+          </h2>
         </div>
 
         <div class="mx-auto grid max-w-[1100px] grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
