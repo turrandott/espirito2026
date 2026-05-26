@@ -275,6 +275,9 @@
               <img src="assets/images/gallery/2.webp" alt="" loading="lazy" />
             </div>
             <div class="manifesto-gallery__slide">
+              <img src="assets/images/gallery/3.webp" alt="" loading="lazy" />
+            </div>
+            <div class="manifesto-gallery__slide">
               <img src="assets/images/gallery/4.webp" alt="" loading="lazy" />
             </div>
             <div class="manifesto-gallery__slide">
@@ -294,6 +297,9 @@
             </div>
             <div class="manifesto-gallery__slide" aria-hidden="true">
               <img src="assets/images/gallery/2.webp" alt="" loading="lazy" />
+            </div>
+            <div class="manifesto-gallery__slide">
+              <img src="assets/images/gallery/3.webp" alt="" loading="lazy" />
             </div>
             <div class="manifesto-gallery__slide" aria-hidden="true">
               <img src="assets/images/gallery/4.webp" alt="" loading="lazy" />
@@ -575,7 +581,7 @@
     <!-- ============================================================
        PUBBLICO
        ============================================================ -->
-    <section class="bg-olive-deep/40 py-[clamp(4rem,12vw,9rem)]">
+    <section class="pubblico-gradient py-[clamp(4rem,12vw,9rem)]">
       <div class="max-w-site mx-auto w-full px-5 sm:px-8 lg:px-10">
         <div class="grid items-center gap-12 md:grid-cols-2 md:[direction:rtl]">
           <div class="reveal border-faint overflow-hidden rounded border md:[direction:ltr]">
@@ -609,18 +615,17 @@
     <!-- ============================================================
        INFO PRATICHE
        ============================================================ -->
-    <section id="info" class="bg-bg-warm py-[clamp(4rem,12vw,9rem)]">
-      <div class="max-w-site mx-auto w-full px-5 sm:px-8 lg:px-10">
-        <div class="reveal mx-auto mb-[clamp(2rem,5vw,3rem)] w-full max-w-[52rem]">
-          <img
-            src="assets/images/musician.webp"
-            alt="Atmosfera del festival Espirito ad Arcidosso"
-            loading="lazy"
-            width="1330"
-            height="768"
-            class="mx-auto block h-auto max-h-[min(92svh,52rem)] w-full object-contain object-center"
-          />
-        </div>
+    <section id="info" class="relative overflow-hidden py-[clamp(4rem,12vw,9rem)]">
+      <div
+        class="pointer-events-none absolute inset-0 bg-[url('assets/images/festival.webp')] bg-cover bg-center bg-no-repeat"
+        aria-hidden="true"
+      ></div>
+      <div class="bg-bg/55 pointer-events-none absolute inset-0" aria-hidden="true"></div>
+      <div
+        class="info-edge-fade pointer-events-none absolute inset-x-0 bottom-0 z-[1]"
+        aria-hidden="true"
+      ></div>
+      <div class="max-w-site relative z-10 mx-auto w-full px-5 sm:px-8 lg:px-10">
         <div class="reveal mb-12 text-center">
           <p class="eyebrow">Prepara la tua esperienza</p>
           <h2 class="h-display">
