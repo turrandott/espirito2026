@@ -112,13 +112,35 @@
     url("../assets/images/electronic.jpg") center/cover no-repeat;
 }
 
-/* ---------- Impatto background image (with fixed parallax) ---------- */
+/* ---------- Impatto — olive wash + fresher text panel ---------- */
 .impatto-bg {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(rgba(20, 16, 12, 0.82), rgba(20, 16, 12, 0.82)),
+    linear-gradient(
+      165deg,
+      rgba(107, 115, 68, 0.38) 0%,
+      rgba(77, 82, 48, 0.28) 35%,
+      rgba(20, 16, 12, 0.68) 70%,
+      rgba(20, 16, 12, 0.78) 100%
+    ),
     url("../assets/images/arcidosso-castle.jpg") center/cover fixed no-repeat;
+}
+.impatto-panel {
+  border: 1px solid rgba(201, 168, 122, 0.42);
+  border-radius: 0.25rem;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  background: linear-gradient(
+    155deg,
+    rgba(107, 115, 68, 0.52) 0%,
+    rgba(77, 82, 48, 0.44) 55%,
+    rgba(20, 16, 12, 0.28) 100%
+  );
+  box-shadow:
+    inset 0 1px 0 rgba(242, 204, 106, 0.12),
+    0 16px 48px rgba(0, 0, 0, 0.22);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 @media (max-width: 767.98px) {
   .impatto-bg {
