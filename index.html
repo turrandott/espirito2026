@@ -191,20 +191,15 @@
       ></div>
 
       <!-- Decorative sound waves -->
-      <svg
-        class="pointer-events-none absolute inset-0 z-[1] opacity-35"
-        viewBox="0 0 1440 900"
-        preserveAspectRatio="none"
-        aria-hidden="true"
-      >
-        <g fill="none" stroke="#f2cc6a" stroke-width="0.6" opacity="0.72">
-          <path d="M0,520 Q360,440 720,520 T1440,520" />
-          <path d="M0,560 Q360,480 720,560 T1440,560" />
-          <path d="M0,600 Q360,520 720,600 T1440,600" />
-          <path d="M0,640 Q360,560 720,640 T1440,640" />
-          <path d="M0,680 Q360,600 720,680 T1440,680" />
-        </g>
-      </svg>
+      <div class="sound-waves sound-waves--hero" aria-hidden="true">
+        <svg viewBox="0 0 1440 900" preserveAspectRatio="none">
+          <path class="sound-waves__stroke" d="M0,520 Q360,440 720,520 T1440,520" />
+          <path class="sound-waves__stroke" d="M0,560 Q360,480 720,560 T1440,560" />
+          <path class="sound-waves__stroke" d="M0,600 Q360,520 720,600 T1440,600" />
+          <path class="sound-waves__stroke" d="M0,640 Q360,560 720,640 T1440,640" />
+          <path class="sound-waves__stroke" d="M0,680 Q360,600 720,680 T1440,680" />
+        </svg>
+      </div>
 
       <!-- Dark overlay (mobile: radial vignette, desktop: left gradient) -->
       <div
@@ -267,6 +262,14 @@
         class="bg-bg/40 md:bg-bg/40 pointer-events-none absolute inset-0"
         aria-hidden="true"
       ></div>
+      <div class="sound-waves sound-waves--band sound-waves--band-bottom sound-waves--slow" aria-hidden="true">
+        <svg viewBox="0 0 1440 160" preserveAspectRatio="none">
+          <path class="sound-waves__stroke" d="M0,48 Q360,18 720,48 T1440,48" />
+          <path class="sound-waves__stroke" d="M0,78 Q360,48 720,78 T1440,78" />
+          <path class="sound-waves__stroke" d="M0,108 Q360,78 720,108 T1440,108" />
+          <path class="sound-waves__stroke" d="M0,138 Q360,108 720,138 T1440,138" />
+        </svg>
+      </div>
       <div
         class="manifesto-gallery relative z-10 mb-[clamp(2rem,5vw,3.5rem)] w-full"
         aria-label="Galleria fotografica"
@@ -370,6 +373,14 @@
         aria-hidden="true"
       ></div>
       <div class="bg-bg/50 pointer-events-none absolute inset-0" aria-hidden="true"></div>
+      <div class="sound-waves sound-waves--band sound-waves--band-top sound-waves--slow" aria-hidden="true">
+        <svg viewBox="0 0 1440 160" preserveAspectRatio="none">
+          <path class="sound-waves__stroke" d="M0,48 Q360,18 720,48 T1440,48" />
+          <path class="sound-waves__stroke" d="M0,78 Q360,48 720,78 T1440,78" />
+          <path class="sound-waves__stroke" d="M0,108 Q360,78 720,108 T1440,108" />
+          <path class="sound-waves__stroke" d="M0,138 Q360,108 720,138 T1440,138" />
+        </svg>
+      </div>
       <div class="max-w-site relative z-10 mx-auto w-full px-5 sm:px-8 lg:px-10">
         <div class="reveal mb-12 text-center">
           <p class="eyebrow">Il nostro impegno</p>
@@ -437,8 +448,16 @@
     <!-- ============================================================
        POLIFONIA DI CULTURE
        ============================================================ -->
-    <section id="polifonia" class="bg-bg py-[clamp(4rem,12vw,9rem)]">
-      <div class="max-w-site mx-auto w-full px-5 sm:px-8 lg:px-10">
+    <section id="polifonia" class="bg-bg relative overflow-hidden py-[clamp(4rem,12vw,9rem)]">
+      <div class="sound-waves sound-waves--band sound-waves--band-mid sound-waves--sand" aria-hidden="true">
+        <svg viewBox="0 0 1440 160" preserveAspectRatio="none">
+          <path class="sound-waves__stroke" d="M0,48 Q360,18 720,48 T1440,48" />
+          <path class="sound-waves__stroke" d="M0,78 Q360,48 720,78 T1440,78" />
+          <path class="sound-waves__stroke" d="M0,108 Q360,78 720,108 T1440,108" />
+          <path class="sound-waves__stroke" d="M0,138 Q360,108 720,138 T1440,138" />
+        </svg>
+      </div>
+      <div class="max-w-site relative z-10 mx-auto w-full px-5 sm:px-8 lg:px-10">
         <div class="mb-16 grid items-center gap-12 md:grid-cols-2">
           <div class="reveal border-faint overflow-hidden rounded border">
             <img
@@ -547,8 +566,16 @@
        ============================================================ -->
     <section class="relative overflow-hidden py-[clamp(4rem,12vw,9rem)]">
       <div class="impatto-bg" aria-hidden="true"></div>
+      <div class="sound-waves sound-waves--band sound-waves--band-bottom" aria-hidden="true">
+        <svg viewBox="0 0 1440 160" preserveAspectRatio="none">
+          <path class="sound-waves__stroke" d="M0,48 Q360,18 720,48 T1440,48" />
+          <path class="sound-waves__stroke" d="M0,78 Q360,48 720,78 T1440,78" />
+          <path class="sound-waves__stroke" d="M0,108 Q360,78 720,108 T1440,108" />
+          <path class="sound-waves__stroke" d="M0,138 Q360,108 720,138 T1440,138" />
+        </svg>
+      </div>
       <div
-        class="max-w-site relative mx-auto w-full max-w-[820px] px-5 py-20 text-center sm:px-8 lg:px-10"
+        class="max-w-site relative z-10 mx-auto w-full max-w-[820px] px-5 py-20 text-center sm:px-8 lg:px-10"
       >
         <!-- <p class="eyebrow reveal">Impatto culturale e sociale</p>
         <h2 class="h-display reveal reveal--delay-1">
@@ -584,8 +611,16 @@
     <!-- ============================================================
        PUBBLICO
        ============================================================ -->
-    <section class="pubblico-gradient py-[clamp(4rem,12vw,9rem)]">
-      <div class="max-w-site mx-auto w-full px-5 sm:px-8 lg:px-10">
+    <section class="pubblico-gradient relative overflow-hidden py-[clamp(4rem,12vw,9rem)]">
+      <div class="sound-waves sound-waves--band sound-waves--band-top sound-waves--slow" aria-hidden="true">
+        <svg viewBox="0 0 1440 160" preserveAspectRatio="none">
+          <path class="sound-waves__stroke" d="M0,48 Q360,18 720,48 T1440,48" />
+          <path class="sound-waves__stroke" d="M0,78 Q360,48 720,78 T1440,78" />
+          <path class="sound-waves__stroke" d="M0,108 Q360,78 720,108 T1440,108" />
+          <path class="sound-waves__stroke" d="M0,138 Q360,108 720,138 T1440,138" />
+        </svg>
+      </div>
+      <div class="max-w-site relative z-10 mx-auto w-full px-5 sm:px-8 lg:px-10">
         <div class="grid items-center gap-12 md:grid-cols-2 md:[direction:rtl]">
           <div class="reveal border-faint overflow-hidden rounded border md:[direction:ltr]">
             <img
@@ -624,6 +659,14 @@
         aria-hidden="true"
       ></div>
       <div class="bg-bg/55 pointer-events-none absolute inset-0" aria-hidden="true"></div>
+      <div class="sound-waves sound-waves--band sound-waves--band-top sound-waves--sand sound-waves--slow" aria-hidden="true">
+        <svg viewBox="0 0 1440 160" preserveAspectRatio="none">
+          <path class="sound-waves__stroke" d="M0,48 Q360,18 720,48 T1440,48" />
+          <path class="sound-waves__stroke" d="M0,78 Q360,48 720,78 T1440,78" />
+          <path class="sound-waves__stroke" d="M0,108 Q360,78 720,108 T1440,108" />
+          <path class="sound-waves__stroke" d="M0,138 Q360,108 720,138 T1440,138" />
+        </svg>
+      </div>
       <div
         class="info-edge-fade pointer-events-none absolute inset-x-0 bottom-0 z-[1]"
         aria-hidden="true"
@@ -745,7 +788,18 @@
     >
       <div class="eredita-bg" aria-hidden="true"></div>
       <div
-        class="max-w-site mx-auto flex w-full max-w-[760px] flex-col items-center gap-[clamp(1rem,2.4vw,1.5rem)] px-5 text-center sm:px-8 lg:px-10"
+        class="sound-waves sound-waves--band sound-waves--band-bottom sound-waves--faint sound-waves--slow"
+        aria-hidden="true"
+      >
+        <svg viewBox="0 0 1440 160" preserveAspectRatio="none">
+          <path class="sound-waves__stroke" d="M0,48 Q360,18 720,48 T1440,48" />
+          <path class="sound-waves__stroke" d="M0,78 Q360,48 720,78 T1440,78" />
+          <path class="sound-waves__stroke" d="M0,108 Q360,78 720,108 T1440,108" />
+          <path class="sound-waves__stroke" d="M0,138 Q360,108 720,138 T1440,138" />
+        </svg>
+      </div>
+      <div
+        class="max-w-site relative z-10 mx-auto flex w-full max-w-[760px] flex-col items-center gap-[clamp(1rem,2.4vw,1.5rem)] px-5 text-center sm:px-8 lg:px-10"
       >
         <p class="eyebrow reveal !text-orange !mb-0">Costruiamo insieme questa eredità</p>
         <img
@@ -859,8 +913,15 @@
     <!-- ============================================================
        FOOTER
        ============================================================ -->
-    <footer class="border-faint border-t bg-[#0c0907] py-6 text-center">
-      <div class="max-w-site mx-auto w-full px-5 sm:px-8 lg:px-10">
+    <footer class="border-faint relative overflow-hidden border-t bg-[#0c0907] py-6 text-center">
+      <div class="sound-waves sound-waves--band sound-waves--band-bottom sound-waves--band-tight sound-waves--faint" aria-hidden="true">
+        <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+          <path class="sound-waves__stroke" d="M0,32 Q360,12 720,32 T1440,32" />
+          <path class="sound-waves__stroke" d="M0,58 Q360,38 720,58 T1440,58" />
+          <path class="sound-waves__stroke" d="M0,84 Q360,64 720,84 T1440,84" />
+        </svg>
+      </div>
+      <div class="max-w-site relative z-10 mx-auto w-full px-5 sm:px-8 lg:px-10">
         <p class="text-muted m-0 text-[0.78rem] tracking-[0.05em]">
           © 2026 Espirito Festival · World Spiritual Music · Arcidosso, Toscana · Italia
         </p>

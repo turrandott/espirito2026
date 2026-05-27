@@ -276,6 +276,197 @@
   }
 }
 
+/* ---------- Decorative sound waves (full-width horizontal bands) ---------- */
+.sound-waves {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  pointer-events: none;
+  z-index: 1;
+  overflow: visible;
+  color: #f2cc6a;
+}
+.sound-waves svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.sound-waves__stroke {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 0.65;
+  vector-effect: non-scaling-stroke;
+  transform-box: fill-box;
+  transform-origin: center;
+  will-change: transform, opacity;
+}
+.sound-waves__stroke:nth-child(1) {
+  animation: soundWaveLine1 8.6s ease-in-out infinite;
+}
+.sound-waves__stroke:nth-child(2) {
+  animation: soundWaveLine2 10.4s ease-in-out infinite;
+}
+.sound-waves__stroke:nth-child(3) {
+  animation: soundWaveLine3 9.2s ease-in-out infinite;
+}
+.sound-waves__stroke:nth-child(4) {
+  animation: soundWaveLine4 11.8s ease-in-out infinite;
+}
+.sound-waves__stroke:nth-child(5) {
+  animation: soundWaveLine5 12.6s ease-in-out infinite;
+}
+.sound-waves--hero {
+  inset: 0;
+  opacity: 0.35;
+}
+.sound-waves--band {
+  height: clamp(96px, 15vh, 200px);
+}
+.sound-waves--band-top {
+  top: 0;
+  bottom: auto;
+  opacity: 0.18;
+}
+.sound-waves--band-bottom {
+  top: auto;
+  bottom: 0;
+  opacity: 0.2;
+}
+.sound-waves--band-mid {
+  top: 38%;
+  bottom: auto;
+  opacity: 0.14;
+}
+.sound-waves--band-tight {
+  height: clamp(64px, 10vh, 120px);
+}
+.sound-waves--sand {
+  color: #c9a87a;
+}
+.sound-waves--faint {
+  opacity: 0.12;
+}
+.sound-waves--slow .sound-waves__stroke:nth-child(1) {
+  animation-duration: 11.2s;
+}
+.sound-waves--slow .sound-waves__stroke:nth-child(2) {
+  animation-duration: 13.4s;
+}
+.sound-waves--slow .sound-waves__stroke:nth-child(3) {
+  animation-duration: 12s;
+}
+.sound-waves--slow .sound-waves__stroke:nth-child(4) {
+  animation-duration: 14.6s;
+}
+.sound-waves--slow .sound-waves__stroke:nth-child(5) {
+  animation-duration: 15.8s;
+}
+/* Each line moves on its own rhythm so gaps breathe — never in sync */
+@keyframes soundWaveLine1 {
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: translate3d(0, 0, 0);
+  }
+  22% {
+    opacity: 0.58;
+    transform: translate3d(12px, -11px, 0);
+  }
+  48% {
+    opacity: 0.46;
+    transform: translate3d(-8px, 7px, 0);
+  }
+  74% {
+    opacity: 0.54;
+    transform: translate3d(6px, -5px, 0);
+  }
+}
+@keyframes soundWaveLine2 {
+  0%,
+  100% {
+    opacity: 0.44;
+    transform: translate3d(0, 6px, 0);
+  }
+  18% {
+    opacity: 0.5;
+    transform: translate3d(-10px, 14px, 0);
+  }
+  42% {
+    opacity: 0.66;
+    transform: translate3d(14px, -9px, 0);
+  }
+  68% {
+    opacity: 0.48;
+    transform: translate3d(-5px, 3px, 0);
+  }
+  88% {
+    opacity: 0.6;
+    transform: translate3d(8px, -12px, 0);
+  }
+}
+@keyframes soundWaveLine3 {
+  0%,
+  100% {
+    opacity: 0.42;
+    transform: translate3d(0, -4px, 0);
+  }
+  30% {
+    opacity: 0.62;
+    transform: translate3d(-14px, -8px, 0);
+  }
+  55% {
+    opacity: 0.48;
+    transform: translate3d(9px, 13px, 0);
+  }
+  80% {
+    opacity: 0.56;
+    transform: translate3d(-6px, -6px, 0);
+  }
+}
+@keyframes soundWaveLine4 {
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: translate3d(0, 3px, 0);
+  }
+  26% {
+    opacity: 0.52;
+    transform: translate3d(11px, 10px, 0);
+  }
+  52% {
+    opacity: 0.68;
+    transform: translate3d(-12px, -14px, 0);
+  }
+  76% {
+    opacity: 0.46;
+    transform: translate3d(7px, 5px, 0);
+  }
+}
+@keyframes soundWaveLine5 {
+  0%,
+  100% {
+    opacity: 0.38;
+    transform: translate3d(0, -2px, 0);
+  }
+  20% {
+    opacity: 0.48;
+    transform: translate3d(-7px, 9px, 0);
+  }
+  44% {
+    opacity: 0.6;
+    transform: translate3d(13px, -10px, 0);
+  }
+  70% {
+    opacity: 0.44;
+    transform: translate3d(-9px, 8px, 0);
+  }
+  92% {
+    opacity: 0.55;
+    transform: translate3d(5px, -7px, 0);
+  }
+}
+
 /* ---------- Info — bottom fade into Eredità (photo section only) ---------- */
 .info-edge-fade {
   height: clamp(7rem, 22vw, 14rem);
@@ -504,6 +695,9 @@
   .hero-bg {
     transform: none;
     animation: none;
+  }
+  .sound-waves__stroke {
+    animation: none !important;
   }
 }
 
