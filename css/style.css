@@ -77,6 +77,171 @@
 .reveal--delay-2 {
   transition-delay: 0.2s;
 }
+/* ---------- Info pratiche — typographic manifest (no cards) ---------- */
+.info-manifest {
+  max-width: 58rem;
+  margin-inline: auto;
+}
+.info-manifest__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.info-manifest__item {
+  margin: 0;
+  padding: clamp(1.35rem, 3vw, 2rem) clamp(0.5rem, 2vw, 1rem);
+  text-align: center;
+  border-top: 1px solid rgba(242, 204, 106, 0.22);
+}
+.info-manifest__item:first-child {
+  border-top: none;
+}
+.info-manifest__label {
+  font-family: "Tenor Sans", Montserrat, sans-serif;
+  font-size: clamp(0.72rem, 0.35vw + 0.65rem, 0.8rem);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #ffb45c;
+  margin: 0 0 0.65rem;
+}
+.info-manifest__label::after {
+  content: " ◆";
+  color: rgba(242, 204, 106, 0.55);
+  font-size: 0.55em;
+  vertical-align: middle;
+}
+.info-manifest__value {
+  font-family: "Cormorant Garamond", "Times New Roman", serif;
+  font-size: clamp(1.35rem, 1.2vw + 1rem, 1.75rem);
+  line-height: 1.2;
+  color: #f5f1e8;
+  margin: 0;
+  font-weight: 400;
+}
+.info-manifest__sub {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: 0.82em;
+  color: rgba(248, 244, 237, 0.78);
+}
+@media (min-width: 640px) {
+  .info-manifest__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .info-manifest__item {
+    border-top: none;
+    border-left: 1px solid rgba(242, 204, 106, 0.18);
+  }
+  .info-manifest__item:nth-child(odd) {
+    border-left: none;
+  }
+  .info-manifest__item:nth-child(-n + 2) {
+    border-bottom: 1px solid rgba(242, 204, 106, 0.18);
+  }
+}
+@media (min-width: 1024px) {
+  .info-manifest__grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  .info-manifest__item {
+    border-bottom: none;
+    padding-block: clamp(1.5rem, 2.5vw, 2.25rem);
+  }
+  .info-manifest__item:nth-child(odd) {
+    border-left: 1px solid rgba(242, 204, 106, 0.18);
+  }
+  .info-manifest__item:first-child {
+    border-left: none;
+  }
+}
+.info-manifest__iban {
+  margin-top: clamp(1.75rem, 4vw, 2.75rem);
+  padding-top: clamp(1.5rem, 3vw, 2rem);
+  border-top: 1px solid rgba(242, 204, 106, 0.28);
+  text-align: center;
+}
+.info-manifest__iban-lead {
+  font-family: "Cormorant Garamond", "Times New Roman", serif;
+  font-size: clamp(1rem, 0.5vw + 0.9rem, 1.15rem);
+  font-style: italic;
+  color: rgba(248, 244, 237, 0.72);
+  margin: 0 0 1rem;
+}
+.iban-copy--inline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem 1rem;
+  max-width: 36rem;
+  margin-inline: auto;
+}
+.iban-copy__tag {
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #ffb45c;
+  flex-shrink: 0;
+}
+.iban-copy__value {
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: clamp(0.68rem, 0.35vw + 0.6rem, 0.82rem);
+  letter-spacing: 0.04em;
+  color: #f8f4ed;
+  word-break: break-all;
+  text-align: left;
+  line-height: 1.35;
+}
+.iban-copy__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-shrink: 0;
+  padding: 0.35rem 0.75rem;
+  border: 1px solid rgba(255, 180, 92, 0.45);
+  border-radius: 999px;
+  background: rgba(20, 16, 12, 0.45);
+  color: #ffb45c;
+  font-family: "Tenor Sans", Montserrat, sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+.iban-copy__btn:hover {
+  border-color: rgba(255, 180, 92, 0.75);
+  background: rgba(255, 180, 92, 0.1);
+}
+.iban-copy__btn:focus-visible {
+  outline: 2px solid #ffb45c;
+  outline-offset: 2px;
+}
+.iban-copy__btn.is-copied {
+  color: #f2cc6a;
+  border-color: rgba(242, 204, 106, 0.55);
+}
+.iban-copy__btn-text {
+  line-height: 1;
+}
+@media (max-width: 479.98px) {
+  .iban-copy--inline {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .iban-copy__value {
+    text-align: center;
+  }
+  .iban-copy__btn {
+    justify-content: center;
+  }
+}
+
 .reveal--delay-3 {
   transition-delay: 0.3s;
 }
@@ -88,7 +253,7 @@
 .hero-bg {
   position: absolute;
   inset: 0;
-  background-image: url("../assets/images/hero.jpg");
+  background-image: url("../assets/images/hero.webp");
   background-size: cover;
   background-repeat: no-repeat;
   filter: brightness(0.78) saturate(1.05);
@@ -128,7 +293,7 @@
       rgba(20, 16, 12, 0.88) 70%,
       rgba(20, 16, 12, 0.95)
     ),
-    url("../assets/images/electronic.jpg") center/cover no-repeat;
+    url("../assets/images/electronic.webp") center/cover no-repeat;
 }
 
 /* ---------- Impatto — olive wash + fresher text panel ---------- */
@@ -142,7 +307,7 @@
       rgba(77, 82, 48, 0.28) 35%,
       rgba(20, 16, 12, 0.68) 70%,
       rgba(20, 16, 12, 0.78) 100%
-    ), */ url("../assets/images/arcidosso-castle.jpg")
+    ), */ url("../assets/images/castle.webp")
     center/cover fixed no-repeat;
 }
 .impatto-panel {

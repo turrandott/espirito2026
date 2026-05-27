@@ -63,6 +63,49 @@
     window.addEventListener("beforeprint", showAll);
   }
 
+  /* ---------- Copy-to-clipboard (e.g. IBAN) ---------- */
+  document.querySelectorAll("[data-copy]").forEach((btn) => {
+    const value = btn.getAttribute("data-copy");
+    if (!value) return;
+
+    const defaultLabel = btn.getAttribute("data-copy-label") || "Copia";
+    const doneLabel = btn.getAttribute("data-copy-done") || "Copiato!";
+    const icon = btn.querySelector(".iban-copy__icon");
+    const iconDone = btn.querySelector(".iban-copy__icon-done");
+    const btnText = btn.querySelector(".iban-copy__btn-text");
+    let resetTimer;
+
+    const setCopied = (copied) => {
+      clearTimeout(resetTimer);
+      btn.setAttribute("aria-label", copied ? doneLabel : defaultLabel);
+      btn.classList.toggle("is-copied", copied);
+      if (icon) icon.classList.toggle("hidden", copied);
+      if (iconDone) iconDone.classList.toggle("hidden", !copied);
+      if (btnText) btnText.textContent = copied ? doneLabel : "Copia";
+      if (copied) {
+        resetTimer = setTimeout(() => setCopied(false), 2200);
+      }
+    };
+
+    btn.addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText(value);
+        setCopied(true);
+      } catch {
+        const ta = document.createElement("textarea");
+        ta.value = value;
+        ta.setAttribute("readonly", "");
+        ta.style.position = "fixed";
+        ta.style.left = "-9999px";
+        document.body.appendChild(ta);
+        ta.select();
+        const ok = document.execCommand("copy");
+        document.body.removeChild(ta);
+        if (ok) setCopied(true);
+      }
+    });
+  });
+
   /* ---------- Update copyright year if year ever rolls over ---------- */
   // (kept static at 2026 by request)
 })();
