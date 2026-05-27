@@ -262,10 +262,36 @@
   inset: 0;
   background-image: url("../assets/images/hero.webp");
   background-size: cover;
+  background-position: 58% center;
   background-repeat: no-repeat;
   filter: brightness(0.78) saturate(1.05);
   transform: scale(1.05);
   animation: heroBreathe 18s ease-in-out infinite alternate;
+}
+
+/* Tablet / iPad: portrait viewports crop the sides — keep the subject on the right */
+@media (min-width: 768px) {
+  .hero-bg {
+    background-position: 48% center;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1279px) {
+  .hero-bg {
+    background-position: 50% center;
+  }
+}
+
+@media (min-width: 1280px) and (max-width: 1535px) {
+  .hero-bg {
+    background-position: -20% center;
+  }
+}
+
+@media (min-width: 1536px) {
+  .hero-bg {
+    background-position: 50% center;
+  }
 }
 @keyframes heroBreathe {
   from {
