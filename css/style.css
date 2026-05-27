@@ -103,14 +103,8 @@
   font-size: clamp(0.72rem, 0.35vw + 0.65rem, 0.8rem);
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: #ffb45c;
+  color: rgb(255 176 6 / 100%);
   margin: 0 0 0.65rem;
-}
-.info-manifest__label::after {
-  content: " ◆";
-  color: rgba(242, 204, 106, 0.55);
-  font-size: 0.55em;
-  vertical-align: middle;
 }
 .info-manifest__value {
   font-family: "Cormorant Garamond", "Times New Roman", serif;
@@ -164,9 +158,8 @@
 }
 .info-manifest__iban-lead {
   font-family: "Cormorant Garamond", "Times New Roman", serif;
-  font-size: clamp(1rem, 0.5vw + 0.9rem, 1.15rem);
   font-style: italic;
-  color: rgba(248, 244, 237, 0.72);
+  color: white;
   margin: 0 0 1rem;
 }
 .iban-copy--inline {
@@ -195,9 +188,10 @@
   line-height: 1.35;
 }
 .iban-copy__btn {
-  display: inline-flex;
+  display: inline-grid;
+  grid-template-columns: 1rem 1fr 1rem;
   align-items: center;
-  gap: 0.4rem;
+  column-gap: 0.55rem;
   flex-shrink: 0;
   padding: 0.35rem 0.75rem;
   border: 1px solid rgba(255, 180, 92, 0.45);
@@ -214,6 +208,20 @@
     border-color 0.2s ease,
     background 0.2s ease;
 }
+.iban-copy__btn::after {
+  content: "";
+  width: 1rem;
+  height: 1rem;
+}
+.iban-copy__btn > svg {
+  grid-column: 1;
+  justify-self: center;
+}
+.iban-copy__btn-text {
+  grid-column: 2;
+  justify-self: center;
+  line-height: 1;
+}
 .iban-copy__btn:hover {
   border-color: rgba(255, 180, 92, 0.75);
   background: rgba(255, 180, 92, 0.1);
@@ -226,9 +234,6 @@
   color: #f2cc6a;
   border-color: rgba(242, 204, 106, 0.55);
 }
-.iban-copy__btn-text {
-  line-height: 1;
-}
 @media (max-width: 479.98px) {
   .iban-copy--inline {
     flex-direction: column;
@@ -238,6 +243,8 @@
     text-align: center;
   }
   .iban-copy__btn {
+    align-self: center;
+    width: auto;
     justify-content: center;
   }
 }

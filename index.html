@@ -617,7 +617,7 @@
        ============================================================ -->
     <section id="info" class="relative overflow-hidden py-[clamp(4rem,12vw,9rem)]">
       <div
-        class="pointer-events-none absolute inset-0 bg-[url('assets/images/arcidosso.webp')] bg-cover bg-center bg-no-repeat"
+        class="pointer-events-none absolute inset-0 bg-[url('assets/images/arcidosso.webp')] bg-cover bg-[position:80%_center] bg-no-repeat sm:bg-[position:70%_center] lg:bg-center"
         aria-hidden="true"
       ></div>
       <div class="bg-bg/55 pointer-events-none absolute inset-0" aria-hidden="true"></div>
@@ -627,7 +627,7 @@
       ></div>
       <div class="max-w-site relative z-10 mx-auto w-full px-5 sm:px-8 lg:px-10">
         <div class="reveal mb-12 text-center">
-          <p class="eyebrow">Prepara la tua esperienza</p>
+          <p class="eyebrow" style="color: rgb(255 176 6 / 98%)">Prepara la tua esperienza</p>
           <h2 class="h-display">
             Informazioni <em>pratiche<span class="h-display-punct">.</span></em>
           </h2>
@@ -674,13 +674,15 @@
             class="info-manifest__iban reveal reveal--delay-4"
             aria-labelledby="info-iban-heading"
           >
-            <p id="info-iban-heading" class="info-manifest__iban-lead">Contributo con bonifico</p>
+            <p id="info-iban-heading" class="info-manifest__iban-lead text-xl">
+              Contributo con bonifico
+            </p>
             <div class="iban-copy iban-copy--inline">
               <span class="iban-copy__tag font-caps">IBAN</span>
               <code class="iban-copy__value" id="iban-value">IT29B0306909606100000416506</code>
               <button
                 type="button"
-                class="iban-copy__btn"
+                class="iban-copy__btn w-32"
                 data-copy="IT29B0306909606100000416506"
                 data-copy-label="Copia IBAN"
                 data-copy-done="Copiato!"
@@ -718,8 +720,12 @@
           </div>
         </div>
 
-        <p class="body-text reveal mx-auto mt-10 text-center">
-          Un ambiente unico circondato dalla natura e dal misticismo spirituale dei borghi toscani.
+        <p class="body-text reveal mx-auto mt-10 text-center text-white">
+          Il festival si terrà nella emblematica Piazza della Riconciliazione, ad Arcidosso
+          (Grosseto), nella bellissima regione della Toscana, Italia. <br />Un ambiente unico
+          circondato dalla natura e dal misticismo spirituale.
+        </p>
+        <p class="body-text reveal mx-auto mt-10 text-center text-white">
           Espirito è pensato per viaggiatori <em>slow</em>, professionisti, menti creative,
           accademici e persone di tutte le età alla ricerca di esperienze culturali autentiche, di
           benessere e connessione con l'ambiente naturale.
