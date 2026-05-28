@@ -660,27 +660,32 @@
   left: 0;
 }
 
-/* ---------- Manifesto gallery marquee ---------- */
+/* ---------- Manifesto gallery (scrollable + JS auto-advance) ---------- */
 .manifesto-gallery__viewport {
-  overflow: hidden;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  cursor: grab;
   -webkit-mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
   mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
+}
+.manifesto-gallery__viewport::-webkit-scrollbar {
+  display: none;
+}
+.manifesto-gallery__viewport.is-dragging {
+  cursor: grabbing;
 }
 .manifesto-gallery__track {
   display: flex;
   width: max-content;
   gap: 0.75rem;
   padding-inline: 0.75rem;
-  animation: manifestoGalleryScroll 48s linear infinite;
-  will-change: transform;
 }
 .manifesto-gallery__slide {
   flex: 0 0 auto;
   width: 300px;
   height: 200px;
   overflow: hidden;
-  /* border-radius: 8px;
-  border: 1px solid rgba(248, 244, 237, 0.12); */
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
 }
 .manifesto-gallery__slide img {
@@ -689,18 +694,11 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
-}
-@keyframes manifestoGalleryScroll {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
+  user-select: none;
+  -webkit-user-drag: none;
 }
 @media (prefers-reduced-motion: reduce) {
   .manifesto-gallery__track {
-    animation: none;
     flex-wrap: wrap;
     justify-content: center;
     width: auto;

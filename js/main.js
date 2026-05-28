@@ -106,6 +106,101 @@
     });
   });
 
+  /* ---------- Manifesto gallery: auto-scroll + pause + drag ---------- */
+  const galleryViewport = document.querySelector(".manifesto-gallery__viewport");
+  const galleryTrack = galleryViewport && galleryViewport.querySelector(".manifesto-gallery__track");
+  if (galleryViewport && galleryTrack) {
+    const reducedMotion =
+      window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    const SPEED = 30; // px / second
+    const RESUME_DELAY = 1500; // ms after last interaction
+
+    let half = 0;
+    let pos = 0;
+    let last = performance.now();
+    let paused = reducedMotion;
+    let resumeTimer = 0;
+    let dragging = false;
+    let dragStartX = 0;
+    let dragStartScroll = 0;
+
+    const recalc = () => {
+      half = galleryTrack.scrollWidth / 2;
+    };
+
+    const frame = (now) => {
+      const dt = (now - last) / 1000;
+      last = now;
+      if (!paused && half > 0) {
+        pos += SPEED * dt;
+        if (pos >= half) pos -= half;
+        galleryViewport.scrollLeft = pos;
+      } else if (half > 0) {
+        const s = galleryViewport.scrollLeft;
+        pos = ((s % half) + half) % half;
+      }
+      requestAnimationFrame(frame);
+    };
+
+    const pause = () => {
+      paused = true;
+      clearTimeout(resumeTimer);
+    };
+    const scheduleResume = () => {
+      if (reducedMotion) return;
+      clearTimeout(resumeTimer);
+      resumeTimer = setTimeout(() => {
+        paused = false;
+      }, RESUME_DELAY);
+    };
+
+    galleryViewport.addEventListener("pointerenter", pause);
+    galleryViewport.addEventListener("pointerleave", () => {
+      dragging = false;
+      galleryViewport.classList.remove("is-dragging");
+      scheduleResume();
+    });
+    galleryViewport.addEventListener("wheel", () => {
+      pause();
+      scheduleResume();
+    }, { passive: true });
+    galleryViewport.addEventListener("touchstart", pause, { passive: true });
+    galleryViewport.addEventListener("touchend", scheduleResume, { passive: true });
+    galleryViewport.addEventListener("focusin", pause);
+    galleryViewport.addEventListener("focusout", scheduleResume);
+
+    // Mouse/pen drag-to-scroll (touch uses native momentum scrolling)
+    galleryViewport.addEventListener("pointerdown", (e) => {
+      if (e.pointerType === "touch") return;
+      dragging = true;
+      dragStartX = e.clientX;
+      dragStartScroll = galleryViewport.scrollLeft;
+      pause();
+      galleryViewport.classList.add("is-dragging");
+      try {
+        galleryViewport.setPointerCapture(e.pointerId);
+      } catch (_) {}
+    });
+    galleryViewport.addEventListener("pointermove", (e) => {
+      if (!dragging) return;
+      galleryViewport.scrollLeft = dragStartScroll - (e.clientX - dragStartX);
+    });
+    const endDrag = () => {
+      if (!dragging) return;
+      dragging = false;
+      galleryViewport.classList.remove("is-dragging");
+      scheduleResume();
+    };
+    galleryViewport.addEventListener("pointerup", endDrag);
+    galleryViewport.addEventListener("pointercancel", endDrag);
+
+    window.addEventListener("resize", recalc);
+    window.addEventListener("load", recalc);
+    recalc();
+    requestAnimationFrame(frame);
+  }
+
   /* ---------- Update copyright year if year ever rolls over ---------- */
   // (kept static at 2026 by request)
 })();
