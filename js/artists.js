@@ -1,6 +1,12 @@
 (function () {
   "use strict";
 
+  const LANG = (document.documentElement.lang || "it").toLowerCase().startsWith("en") ? "en" : "it";
+  const T = {
+    it: { discover: "scopri", openCard: "apri scheda", close: "Chiudi" },
+    en: { discover: "discover", openCard: "open profile", close: "Close" },
+  }[LANG];
+
   const SHEET_ID = "1u5imLmlr7mBY9rMV1bsORS9ZjWG_KGBeJRkhRNtv-sA";
   const GVIZ_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:json&headers=1`;
 
@@ -34,25 +40,30 @@
     return JSON.parse(text.substring(start, end + 1));
   }
 
+  function localText(cells, itIdx, enIdx) {
+    return LANG === "en"
+      ? cellText(cells, enIdx) || cellText(cells, itIdx)
+      : cellText(cells, itIdx);
+  }
+
   function extractRows(parsed) {
     const rows = (parsed && parsed.table && parsed.table.rows) || [];
     const out = [];
     for (const row of rows) {
       const cells = row.c || [];
       const name = cellText(cells, 0);
-      const bio = cellText(cells, 1);
-      const photoUrl = cellPhoto(cells, 2);
+      const photoUrl = cellPhoto(cells, 3);
       if (!name || !photoUrl) continue;
       out.push({
         name,
-        bio,
+        bio: localText(cells, 1, 2),
         photoUrl,
-        photoUrlLarge: cellPhoto(cells, 2, "w1400"),
-        text1: cellText(cells, 3),
-        photo2Url: cellPhoto(cells, 4, "w1400"),
-        text2: cellText(cells, 5),
-        photo3Url: cellPhoto(cells, 6, "w1400"),
-        text3: cellText(cells, 7),
+        photoUrlLarge: cellPhoto(cells, 3, "w1400"),
+        text1: localText(cells, 4, 5),
+        photo2Url: cellPhoto(cells, 6, "w1400"),
+        text2: localText(cells, 7, 8),
+        photo3Url: cellPhoto(cells, 9, "w1400"),
+        text3: localText(cells, 10, 11),
       });
     }
     return out;
@@ -64,7 +75,7 @@
     card.className = delay ? `${CARD_CLASSES} ${delay}` : CARD_CLASSES;
     card.setAttribute("role", "button");
     card.setAttribute("tabindex", "0");
-    card.setAttribute("aria-label", `${artist.name} — apri scheda`);
+    card.setAttribute("aria-label", `${artist.name} — ${T.openCard}`);
 
     const imgWrap = document.createElement("div");
     imgWrap.className = "aspect-[4/3] bg-bg-warm overflow-hidden";
@@ -96,7 +107,7 @@
     more.className =
       "font-caps text-orange/70 tracking-mid text-[0.72rem] uppercase mt-3 inline-flex items-center gap-2 transition-colors duration-300 group-hover:text-orange group-focus-visible:text-orange";
     const moreLabel = document.createElement("span");
-    moreLabel.textContent = "scopri";
+    moreLabel.textContent = T.discover;
     const moreArrow = document.createElement("span");
     moreArrow.setAttribute("aria-hidden", "true");
     moreArrow.className =
@@ -153,7 +164,7 @@
     modalCloseBtn.type = "button";
     modalCloseBtn.className = "artist-modal__close";
     modalCloseBtn.setAttribute("data-modal-close", "");
-    modalCloseBtn.setAttribute("aria-label", "Chiudi");
+    modalCloseBtn.setAttribute("aria-label", T.close);
     modalCloseBtn.textContent = "×";
 
     modalBody = document.createElement("div");

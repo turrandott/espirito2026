@@ -1,0 +1,143 @@
+<!doctype html>
+<!--
+  Open Graph / social share card (English) — rendered to assets/images/og-en.jpg at 1200x630.
+  Not linked from the site. Re-screenshot this page at 1200x630 to regenerate.
+-->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Tenor+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 1200px;
+        height: 630px;
+        overflow: hidden;
+        background: #14100c;
+      }
+      .card {
+        position: relative;
+        width: 1200px;
+        height: 630px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        text-align: center;
+      }
+      /* Background photo — matches the site hero */
+      .bg {
+        position: absolute;
+        inset: 0;
+        background: url("assets/images/hero.webp") center / cover no-repeat;
+        filter: brightness(0.66) saturate(1.05);
+      }
+      /* Vignette + bottom gradient for text legibility */
+      .scrim {
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(
+            ellipse at center,
+            rgba(20, 16, 12, 0.55) 0%,
+            rgba(20, 16, 12, 0.15) 55%,
+            rgba(20, 16, 12, 0) 75%
+          ),
+          linear-gradient(
+            to bottom,
+            rgba(20, 16, 12, 0.35) 0%,
+            rgba(20, 16, 12, 0) 30%,
+            rgba(20, 16, 12, 0) 62%,
+            rgba(20, 16, 12, 0.75) 100%
+          );
+      }
+      /* Decorative sound waves (same motif as the hero) */
+      .waves {
+        position: absolute;
+        inset: 0;
+        opacity: 0.35;
+        pointer-events: none;
+      }
+      .content {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+      }
+      .eyebrow {
+        font-family: "Tenor Sans", sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 0.5em;
+        /* offset half a letter so the spaced text stays optically centered */
+        text-indent: 0.5em;
+        font-size: 19px;
+        color: #f5f1e8;
+      }
+      .logo {
+        width: 540px;
+        height: auto;
+        filter: drop-shadow(0 10px 40px rgba(0, 0, 0, 0.45));
+      }
+      .date {
+        font-family: "Cormorant Garamond", serif;
+        font-weight: 300;
+        font-style: italic;
+        font-size: 46px;
+        letter-spacing: 0.01em;
+        color: #f5f1e8;
+      }
+      .date strong {
+        color: #f2cc6a;
+        font-weight: 500;
+        font-style: normal;
+      }
+      .place {
+        font-family: "Tenor Sans", sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 0.32em;
+        text-indent: 0.32em;
+        font-size: 22px;
+        color: #f5f1e8;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <div class="bg"></div>
+      <div class="scrim"></div>
+      <svg class="waves" viewBox="0 0 1440 900" preserveAspectRatio="none" aria-hidden="true">
+        <g fill="none" stroke="#f2cc6a" stroke-width="0.8" opacity="0.72">
+          <path d="M0,520 Q360,440 720,520 T1440,520" />
+          <path d="M0,560 Q360,480 720,560 T1440,560" />
+          <path d="M0,600 Q360,520 720,600 T1440,600" />
+          <path d="M0,640 Q360,560 720,640 T1440,640" />
+          <path d="M0,680 Q360,600 720,680 T1440,680" />
+        </g>
+      </svg>
+
+      <div class="content">
+        <p class="eyebrow">Festival</p>
+        <img
+          class="logo"
+          src="assets/logos/espirito-white.webp"
+          alt="Espirito — World Spiritual Music"
+        />
+        <p class="date"><strong>19 &amp; 20</strong> June <strong>2026</strong></p>
+        <p class="place">Arcidosso · Tuscany · Italy</p>
+      </div>
+    </div>
+  </body>
+</html>

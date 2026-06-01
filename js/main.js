@@ -1,6 +1,12 @@
 (function () {
   "use strict";
 
+  const LANG = (document.documentElement.lang || "it").toLowerCase().startsWith("en") ? "en" : "it";
+  const T = {
+    it: { openMenu: "Apri menu", closeMenu: "Chiudi menu", copy: "Copia", copied: "Copiato!" },
+    en: { openMenu: "Open menu", closeMenu: "Close menu", copy: "Copy", copied: "Copied!" },
+  }[LANG];
+
   /* ---------- Nav: scroll state + mobile toggle ---------- */
   const nav = document.getElementById("nav");
   const navToggle = document.getElementById("navToggle");
@@ -18,7 +24,7 @@
       nav.classList.toggle("is-open", open);
       document.body.classList.toggle("menu-open", open);
       navToggle.setAttribute("aria-expanded", open ? "true" : "false");
-      navToggle.setAttribute("aria-label", open ? "Chiudi menu" : "Apri menu");
+      navToggle.setAttribute("aria-label", open ? T.closeMenu : T.openMenu);
     };
     navToggle.addEventListener("click", () => setOpen(!nav.classList.contains("is-open")));
     navMenu.addEventListener("click", (e) => {
@@ -68,8 +74,8 @@
     const value = btn.getAttribute("data-copy");
     if (!value) return;
 
-    const defaultLabel = btn.getAttribute("data-copy-label") || "Copia";
-    const doneLabel = btn.getAttribute("data-copy-done") || "Copiato!";
+    const defaultLabel = btn.getAttribute("data-copy-label") || T.copy;
+    const doneLabel = btn.getAttribute("data-copy-done") || T.copied;
     const icon = btn.querySelector(".iban-copy__icon");
     const iconDone = btn.querySelector(".iban-copy__icon-done");
     const btnText = btn.querySelector(".iban-copy__btn-text");
@@ -81,7 +87,7 @@
       btn.classList.toggle("is-copied", copied);
       if (icon) icon.classList.toggle("hidden", copied);
       if (iconDone) iconDone.classList.toggle("hidden", !copied);
-      if (btnText) btnText.textContent = copied ? doneLabel : "Copia";
+      if (btnText) btnText.textContent = copied ? doneLabel : T.copy;
       if (copied) {
         resetTimer = setTimeout(() => setCopied(false), 2200);
       }
@@ -108,7 +114,8 @@
 
   /* ---------- Manifesto gallery: auto-scroll + pause + drag ---------- */
   const galleryViewport = document.querySelector(".manifesto-gallery__viewport");
-  const galleryTrack = galleryViewport && galleryViewport.querySelector(".manifesto-gallery__track");
+  const galleryTrack =
+    galleryViewport && galleryViewport.querySelector(".manifesto-gallery__track");
   if (galleryViewport && galleryTrack) {
     const reducedMotion =
       window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -161,10 +168,14 @@
       galleryViewport.classList.remove("is-dragging");
       scheduleResume();
     });
-    galleryViewport.addEventListener("wheel", () => {
-      pause();
-      scheduleResume();
-    }, { passive: true });
+    galleryViewport.addEventListener(
+      "wheel",
+      () => {
+        pause();
+        scheduleResume();
+      },
+      { passive: true }
+    );
     galleryViewport.addEventListener("touchstart", pause, { passive: true });
     galleryViewport.addEventListener("touchend", scheduleResume, { passive: true });
     galleryViewport.addEventListener("focusin", pause);
