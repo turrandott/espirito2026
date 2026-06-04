@@ -861,6 +861,27 @@
   flex-direction: column;
   gap: clamp(0.75rem, 2vw, 1rem);
 }
+.artist-modal__links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-top: clamp(1rem, 3vw, 1.5rem);
+  border-top: 1px solid rgba(242, 204, 106, 0.22);
+}
+.artist-modal__link {
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(0.9rem, 1.3vw, 1rem);
+  color: #ffb45c;
+  text-decoration: none;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  transition: color 0.2s ease;
+}
+.artist-modal__link:hover,
+.artist-modal__link:focus-visible {
+  color: #f2cc6a;
+  text-decoration: underline;
+}
 body.modal-open {
   overflow: hidden;
 }

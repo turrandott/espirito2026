@@ -46,6 +46,13 @@
       : cellText(cells, itIdx);
   }
 
+  function cleanLinks(raw) {
+    return raw
+      .split(/[\s,]+/)
+      .map((s) => s.replace(/^[\s,.]+|[\s,.]+$/g, ""))
+      .filter((s) => /^https?:\/\//i.test(s));
+  }
+
   function extractRows(parsed) {
     const rows = (parsed && parsed.table && parsed.table.rows) || [];
     const out = [];
@@ -64,6 +71,7 @@
         text2: localText(cells, 7, 8),
         photo3Url: cellPhoto(cells, 9, "w1400"),
         text3: localText(cells, 10, 11),
+        links: cleanLinks(cellText(cells, 12)),
       });
     }
     return out;
@@ -93,7 +101,7 @@
     imgWrap.appendChild(img);
 
     const text = document.createElement("div");
-    text.className = "flex flex-col gap-1 p-5";
+    text.className = "flex flex-col grow gap-1 p-5";
 
     const nameEl = document.createElement("span");
     nameEl.className = "font-caps text-orange tracking-mid text-[0.92rem] uppercase";
@@ -105,7 +113,7 @@
 
     const more = document.createElement("span");
     more.className =
-      "font-caps text-orange/70 tracking-mid text-[0.72rem] uppercase mt-3 inline-flex items-center gap-2 transition-colors duration-300 group-hover:text-orange group-focus-visible:text-orange";
+      "font-caps text-orange/70 tracking-mid text-[0.72rem] uppercase mt-auto pt-3 inline-flex items-center gap-2 transition-colors duration-300 group-hover:text-orange group-focus-visible:text-orange";
     const moreLabel = document.createElement("span");
     moreLabel.textContent = T.discover;
     const moreArrow = document.createElement("span");
@@ -257,6 +265,21 @@
 
     appendSection(frag, artist.photo2Url, artist.text2, artist.name);
     appendSection(frag, artist.photo3Url, artist.text3, artist.name);
+
+    if (artist.links.length) {
+      const linksWrap = document.createElement("div");
+      linksWrap.className = "artist-modal__links";
+      for (const url of artist.links) {
+        const a = document.createElement("a");
+        a.className = "artist-modal__link";
+        a.href = url;
+        a.textContent = url;
+        a.target = "_blank";
+        a.rel = "noopener";
+        linksWrap.appendChild(a);
+      }
+      frag.appendChild(linksWrap);
+    }
 
     return frag;
   }

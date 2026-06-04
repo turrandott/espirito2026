@@ -796,9 +796,17 @@
             <div class="info-manifest__item reveal reveal--delay-3">
               <dt class="info-manifest__label">Location</dt>
               <dd class="info-manifest__value">
-                Piazza della
-                <em class="text-gold italic">Riconciliazione</em>
-                <span class="info-manifest__sub">Arcidosso (GR)</span>
+                <a
+                  href="https://maps.app.goo.gl/xHWrb8xMcF8zLhts7"
+                  target="_blank"
+                  rel="noopener"
+                  class="hover:text-gold transition-colors duration-300"
+                  aria-label="Open location in Google Maps"
+                >
+                  Piazza della
+                  <em class="text-gold italic">Riconciliazione</em>
+                  <span class="info-manifest__sub">Arcidosso (GR)</span>
+                </a>
               </dd>
             </div>
             <div class="info-manifest__item reveal reveal--delay-4">
@@ -826,48 +834,61 @@
               <span aria-hidden="true">→</span>
             </a>
             <p class="font-caps my-4">OR</p>
-            <p id="info-iban-heading" class="info-manifest__iban-lead text-xl">
-              Contribute by bank transfer
-            </p>
-            <div class="iban-copy iban-copy--inline">
-              <span class="iban-copy__tag font-caps">IBAN</span>
-              <code class="iban-copy__value" id="iban-value">IT29B0306909606100000416506</code>
-              <button
-                type="button"
-                class="iban-copy__btn w-32"
-                data-copy="IT29B0306909606100000416506"
-                data-copy-label="Copy IBAN"
-                data-copy-done="Copied!"
-                aria-label="Copy IBAN to clipboard"
-                aria-describedby="iban-value"
-              >
-                <svg
-                  class="iban-copy__icon h-4 w-4"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  aria-hidden="true"
+            <div
+              class="border-orange/25 mx-auto mt-2 max-w-[32rem] rounded border bg-[#ffb45c1a] p-6 shadow-lg shadow-black/30 backdrop-blur-sm"
+            >
+              <p id="info-iban-heading" class="info-manifest__iban-lead text-xl">
+                Contribute by bank transfer
+              </p>
+              <div class="iban-copy iban-copy--inline">
+                <span class="iban-copy__tag font-caps">IBAN</span>
+                <code class="iban-copy__value" id="iban-value">IT29B0306909606100000416506</code>
+                <button
+                  type="button"
+                  class="iban-copy__btn w-32"
+                  data-copy="IT29B0306909606100000416506"
+                  data-copy-label="Copy IBAN"
+                  data-copy-done="Copied!"
+                  aria-label="Copy IBAN to clipboard"
+                  aria-describedby="iban-value"
                 >
-                  <rect x="9" y="9" width="13" height="13" rx="2" />
-                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
-                </svg>
-                <svg
-                  class="iban-copy__icon-done hidden h-4 w-4"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  aria-hidden="true"
-                >
-                  <path d="M20 6 9 17l-5-5" />
-                </svg>
-                <span class="iban-copy__btn-text">Copy</span>
-              </button>
+                  <svg
+                    class="iban-copy__icon h-4 w-4"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <rect x="9" y="9" width="13" height="13" rx="2" />
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+                  </svg>
+                  <svg
+                    class="iban-copy__icon-done hidden h-4 w-4"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="M20 6 9 17l-5-5" />
+                  </svg>
+                  <span class="iban-copy__btn-text">Copy</span>
+                </button>
+              </div>
+
+              <div class="iban-copy iban-copy--inline mt-3">
+                <span class="iban-copy__tag font-caps">Account holder</span>
+                <span class="font-body text-ink text-[0.95rem]">Dynamic space of the elements</span>
+              </div>
+              <div class="iban-copy iban-copy--inline mt-3">
+                <span class="iban-copy__tag font-caps">Reference</span>
+                <span class="font-body text-ink text-[0.95rem]">Espirito festival</span>
+              </div>
             </div>
           </div>
         </div>
