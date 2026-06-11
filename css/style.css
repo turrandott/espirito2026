@@ -576,6 +576,19 @@
     linear-gradient(155deg, #728055 0%, #5a7241 38%, #597341 72%, #4d6238 100%);
 }
 
+/* Darker, cloudier sibling of .pubblico-gradient for the Programma section:
+   soft light/dark green blobs over a deep olive base. */
+.programma-gradient {
+  background:
+    radial-gradient(ellipse 120% 85% at 50% -12%, rgba(242, 204, 106, 0.12) 0%, transparent 58%),
+    radial-gradient(ellipse 65% 45% at 12% 24%, rgba(155, 170, 115, 0.18) 0%, transparent 58%),
+    radial-gradient(ellipse 70% 48% at 88% 48%, rgba(140, 158, 100, 0.15) 0%, transparent 56%),
+    radial-gradient(ellipse 45% 32% at 72% 10%, rgba(165, 178, 124, 0.12) 0%, transparent 55%),
+    radial-gradient(ellipse 75% 50% at 25% 88%, rgba(26, 35, 18, 0.45) 0%, transparent 60%),
+    radial-gradient(ellipse 55% 38% at 60% 62%, rgba(30, 40, 20, 0.3) 0%, transparent 55%),
+    linear-gradient(155deg, #57633e 0%, #46592f 38%, #43552e 72%, #38472a 100%);
+}
+
 /* ---------- Scrolled-nav state (toggled by main.js) ---------- */
 .nav.is-scrolled {
   background: rgba(20, 16, 12, 0.92);
@@ -707,6 +720,112 @@
   }
 }
 
+/* ---------- Programma — two-day schedule ---------- */
+.program-day {
+  font-family: "Tenor Sans", Montserrat, sans-serif;
+  font-size: clamp(1.05rem, 1.1vw + 0.65rem, 1.4rem);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: #f8f4ed;
+  text-align: center;
+  margin: 0 0 clamp(1.25rem, 2.5vw, 1.85rem);
+  padding-bottom: clamp(0.85rem, 2vw, 1.15rem);
+  border-bottom: 1px solid rgba(242, 204, 106, 0.28);
+}
+.program-day em {
+  font-style: normal;
+  color: #f2cc6a;
+}
+.program-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.program-item {
+  display: grid;
+  grid-template-columns: 3.9rem 1fr;
+  column-gap: clamp(0.75rem, 1.5vw, 1.15rem);
+  padding-block: clamp(0.85rem, 1.6vw, 1.15rem);
+  border-top: 1px solid rgba(248, 244, 237, 0.1);
+}
+.program-item:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+.program-item:last-child {
+  padding-bottom: 0;
+}
+.program-time {
+  font-family: "Cormorant Garamond", "Times New Roman", serif;
+  font-size: clamp(1.15rem, 0.5vw + 1rem, 1.35rem);
+  font-weight: 500;
+  line-height: 1.25;
+  color: #f2cc6a;
+}
+.program-name {
+  display: block;
+  font-family: "Tenor Sans", Montserrat, sans-serif;
+  font-size: clamp(0.9rem, 0.35vw + 0.82rem, 1.02rem);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1.45;
+  color: #f8f4ed;
+  padding-top: 0.2em;
+}
+.program-tag {
+  display: block;
+  font-family: "Cormorant Garamond", "Times New Roman", serif;
+  font-style: italic;
+  font-size: clamp(1.05rem, 0.4vw + 0.95rem, 1.2rem);
+  line-height: 1.4;
+  color: rgba(248, 244, 237, 0.72);
+  margin-top: 0.15rem;
+}
+/* Wide, short banner crop — works with any source photo (portrait or landscape).
+   Tune the visible band per photo with an object-[x_y] utility on the img. */
+.program-photo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 1;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 8px;
+  border: 1px solid rgba(248, 244, 237, 0.14);
+  margin-top: 0.8rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  transition:
+    filter 0.3s ease,
+    border-color 0.3s ease;
+}
+/* Photo wrapped in a button — enabled by artists.js once the artist
+   row is matched in the sheet; opens the same modal as the culture cards. */
+.program-photo-btn {
+  display: block;
+  width: 100%;
+  margin: 0.8rem 0 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  border-radius: 8px;
+  text-align: inherit;
+}
+.program-photo-btn .program-photo {
+  margin-top: 0;
+}
+.program-photo-btn:not(:disabled) {
+  cursor: pointer;
+}
+.program-photo-btn:not(:disabled):hover .program-photo,
+.program-photo-btn:not(:disabled):focus-visible .program-photo {
+  border-color: rgba(255, 180, 92, 0.6);
+  filter: brightness(1.08);
+}
+.program-photo-btn:focus-visible {
+  outline: 2px solid #ffb45c;
+  outline-offset: 3px;
+}
+
 /* ---------- Reduced-motion ---------- */
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -822,8 +941,11 @@
 .artist-modal__hero img,
 .artist-modal__section img {
   display: block;
-  width: 100%;
+  width: auto;
+  max-width: 100%;
   height: auto;
+  max-height: 400px;
+  margin-inline: auto;
   border-radius: 4px;
 }
 .artist-modal__heading {

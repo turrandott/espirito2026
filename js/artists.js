@@ -330,6 +330,56 @@
     if (heading) heading.style.display = "none";
   }
 
+  /* ---------- Program photos → same artist modal ---------- */
+
+  function normName(s) {
+    return String(s)
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .replace(/[^a-z0-9]+/g, " ")
+      .trim();
+  }
+
+  // Exact normalized match first; if the sheet name was edited since the
+  // data-artist attribute was written, fall back to the row sharing the
+  // most name tokens (must be a unique winner).
+  function findArtist(rows, raw) {
+    const target = normName(raw || "");
+    if (!target) return null;
+    const exact = rows.find((a) => normName(a.name) === target);
+    if (exact) return exact;
+
+    const tokens = new Set(target.split(" ").filter((t) => t.length >= 3));
+    let best = null;
+    let bestScore = 0;
+    let tied = false;
+    for (const a of rows) {
+      let score = 0;
+      for (const t of normName(a.name).split(" ")) {
+        if (tokens.has(t)) score++;
+      }
+      if (score > bestScore) {
+        best = a;
+        bestScore = score;
+        tied = false;
+      } else if (score === bestScore && score > 0) {
+        tied = true;
+      }
+    }
+    return bestScore > 0 && !tied ? best : null;
+  }
+
+  function wireProgramButtons(rows) {
+    document.querySelectorAll("button[data-artist]").forEach((btn) => {
+      const artist = findArtist(rows, btn.getAttribute("data-artist"));
+      if (!artist) return;
+      btn.disabled = false;
+      btn.setAttribute("aria-label", `${artist.name} — ${T.openCard}`);
+      btn.addEventListener("click", () => openArtistModal(artist, btn));
+    });
+  }
+
   document.addEventListener("DOMContentLoaded", async () => {
     const grid = document.querySelector("[data-polifonia-grid]");
     const heading = document.querySelector("[data-polifonia-heading]");
@@ -343,6 +393,7 @@
         return;
       }
       renderArtists(rows, grid);
+      wireProgramButtons(rows);
     } catch (err) {
       console.warn("[artists] fetch failed:", err);
       hideSection(grid, heading);
